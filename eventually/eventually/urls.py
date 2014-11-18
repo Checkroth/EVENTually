@@ -2,9 +2,9 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'eventually.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    (r'', include('accounts.urls')),
+    (r'', include('events.urls')),
+    (r'', include('subevents.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
