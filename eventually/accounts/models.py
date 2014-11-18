@@ -7,13 +7,7 @@ class UserProfile(django.db.models.Model):
     user = django.db.models.OneToOneField(django.contrib.auth.models.User) #This isn't working with super user?
     birthday = django.db.models.DateTimeField()
     join_date = django.db.models.DateTimeField(auto_now_add=True)
-
-
     #interests = django.db.models.ForeignKeyField(eventually.models.interests)
-
-
-# definition of UserProfile from above
-# ...
 
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
