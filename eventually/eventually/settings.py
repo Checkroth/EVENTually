@@ -25,6 +25,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
@@ -45,7 +47,7 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
 
     'accounts',
     'events',
