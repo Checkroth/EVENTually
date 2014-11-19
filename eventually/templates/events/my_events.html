@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+THIS IS A NEW BLOCK
+
+<h1>Welcome, {{ user.username }}</h1>
+
+{% if events %}
+
+{% for event in events %}
+
+<div class='event'> {{ event.title }} </div>
+{% endfor %}
+
+{% else %}
+<h1>Sorry, you don't have any events</h1>
+{% endif %}
+
+{% endblock %}
