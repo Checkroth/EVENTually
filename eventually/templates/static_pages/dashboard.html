@@ -43,14 +43,16 @@
         <!-- SUGGESTED EVENTS -->
         <section class="events">
         	{% if events %}  
-        		<ul id="scroller">
-                    <li><img src="images/image.png"></li>
-                    <li><img src="images/image.png"></li>
-                    <li><img src="images/image.png"></li>
-                    <li><img src="images/image.png"></li>
-                    <li><img src="images/image.png"></li>
-                    <li><img src="images/image.png"></li>
-                </ul> 
+            <ul id="scroller">
+                {% for event in events %}
+                <li>
+                    <img src="{{ event.event_photo.url }}"> <br />
+                    {{ event.title }} <br />
+                    {{ event.start_time }}      {{ event.end_time }}
+                    {{ event.description }}
+                </li>
+                {% endfor %}
+            </ul>
             {% else %}
             	<h3>No events at this time.</h3>
             {% endif %}
