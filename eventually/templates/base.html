@@ -1,15 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 
-{% block head_stylesheets %}
-{% endblock %}
+<head>
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- PAGE TITLE -->
+    {% block page_title %}
+    <title>[EVENTually]</title>
+    {% endblock %}
+    
+    <!-- STYLESHEETS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../staticfiles/stylesheets/normalize.css" rel="stylesheet">
+    <link href="../../staticfiles/stylesheets/skeleton.css" rel="stylesheet">
+    <link href="../../staticfiles/stylesheets/typography.css" rel="stylesheet">
+    {% block stylesheets %}
+	{% endblock %}
+    <link href="../../staticfiles/stylesheets/jquery.simplyscroll.css" media="all" rel="stylesheet">
+    <link href="../../staticfiles/stylesheets/jquery.sidr.dark.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="../../staticfiles/stylesheetss/override.css"  rel="stylesheet">
 
-{% block meta %}
-{% endblock %}
+    <!-- JAVASCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.js"></script>
+    <script src="../../staticfiles/javascripts/jquery.simplyscroll.min.js"></script>
+    <script src="../../staticfiles/javascripts/jquery.sidr.min.js"></script>
+    <script src="../../staticfiles/javascripts/bucket.js"></script>
+</head>
 
-<h1>THIS HEADER CANT GO AWAY</h1>
+<body>
+	
+	<!-- TOP BAR -->
+    <section id="topBar">
+        <div class="container">
+            <header>
+                <div id="logo" class="four columns alpha">
+                    <div class="sidrToggle">
+                        <a id="sidr-menu" href="#sidr"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <h1>[EVENTually]</h1>
+                </div>
+                <div class="twelve columns omega">
+                    <div id="sidr">
+                        {% block sidr_nav %}
+						{% endblock %}
+                    </div>
+                    <div class="mainNav">
+                        {% block main_nav %}
+						{% endblock %}
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
 
-{% block main %}
-THIS IS MAIN CONTENT
-{% endblock %}
+	{% block main %}
+	{% endblock %}
 
-{% block footer %}
-{% endblock %}
+	<!-- PADDING ABOVE FOOTER -->
+    <div class="padding"></div>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2014 House LANnister Inc.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
