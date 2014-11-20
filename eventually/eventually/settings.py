@@ -33,6 +33,9 @@ TEMPLATE_DIRS = (
     BASE_DIR + '/templates/',
 )
 
+MEDIA_ROOT = PROJECT_PATH + '/../../assets' + '/media'
+MEDIA_URL = '/media/'
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -52,6 +55,7 @@ INSTALLED_APPS = (
     'accounts',
     'events',
     'subevents',
+    'static_pages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +71,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.request",
+    "django.core.context_processors.static",
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
 )
@@ -110,6 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 SITE_ID = 1
+STATIC_ROOT = PROJECT_PATH + '/static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "staticfiles"),

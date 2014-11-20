@@ -17,22 +17,22 @@
     
     <!-- STYLESHEETS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../staticfiles/stylesheets/normalize.css" rel="stylesheet">
-    <link href="../../staticfiles/stylesheets/skeleton.css" rel="stylesheet">
-    <link href="../../staticfiles/stylesheets/typography.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}stylesheets/normalize.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}stylesheets/skeleton.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}stylesheets/typography.css" rel="stylesheet">
     {% block stylesheets %}
 	{% endblock %}
-    <link href="../../staticfiles/stylesheets/jquery.simplyscroll.css" media="all" rel="stylesheet">
-    <link href="../../staticfiles/stylesheets/jquery.sidr.dark.css" type="text/css" media="screen" rel="stylesheet"/>
-    <link href="../../staticfiles/stylesheetss/override.css"  rel="stylesheet">
+    <link href="{{ STATIC_URL }}stylesheets/jquery.simplyscroll.css" media="all" rel="stylesheet">
+    <link href="{{ STATIC_URL }}stylesheets/jquery.sidr.dark.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}stylesheets/override.css"  rel="stylesheet">
 
     <!-- JAVASCRIPTS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.js"></script>
-    <script src="../../staticfiles/javascripts/jquery.simplyscroll.min.js"></script>
-    <script src="../../staticfiles/javascripts/jquery.sidr.min.js"></script>
-    <script src="../../staticfiles/javascripts/bucket.js"></script>
+    <script src="{{ STATIC_URL }}javascripts/jquery.simplyscroll.min.js"></script>
+    <script src="{{ STATIC_URL }}javascripts/jquery.sidr.min.js"></script>
+    <script src="{{ STATIC_URL }}javascripts/bucket.js"></script>
 </head>
 
 <body>
