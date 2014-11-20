@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>[EVENTually] | Hompage</title>
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.print.css" rel="stylesheet">
+{% endblock %}
+
+{% block sidr_nav %}
+	<nav>
+		<ul>
+        	<li><a href="#">+ Event</a></li>
+            <li><a href="#">My Events</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log Off</a></li>
+        </ul>
+	</nav>
+{% endblock %}
+
+{% block main_nav %}
+	<nav>
+		<ul>
+        	<li><a href="#">+ Event</a></li>
+            <li><a href="#">My Events</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log Off</a></li>
+        </ul>
+	</nav>
+{% endblock %}
+
+{% block main %}
+<main>
+	<div class="container">
+        <h2 class="welcome">Welcome, {{ user.username }}!</h2>
+        <!-- CALENDAR -->
+        <section>
+            <div id="calendar"></div>
+        </section>
+        <hr>
+        <!-- SUGGESTED EVENTS -->
+        <section class="events">
+        	{% if events %}  
+        		<ul id="scroller">
+                    <li><img src="images/image.png"></li>
+                    <li><img src="images/image.png"></li>
+                    <li><img src="images/image.png"></li>
+                    <li><img src="images/image.png"></li>
+                    <li><img src="images/image.png"></li>
+                    <li><img src="images/image.png"></li>
+                </ul> 
+            {% else %}
+            	<h3>No events at this time.</h3>
+            {% endif %}
+        </section>
+    </div>
+</main>
+{% endblock %}
