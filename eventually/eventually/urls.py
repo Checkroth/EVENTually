@@ -3,7 +3,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # (r'', include('accounts.urls')),
-    # (r'', include('events.urls')),
+    (r'', include('events.urls')),
     # (r'', include('subevents.urls')),
 
     (r'^accounts/', include('allauth.urls')),
