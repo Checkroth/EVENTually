@@ -1,0 +1,265 @@
+/* COLORS */
+
+/* EGGPLANT PURPLE = #3E212D */
+/* BLACKOUT GRAY = #111 */
+/* STEEL BLUE = #4B5F6D */
+
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    /* background: #EEE;
+    background: -webkit-linear-gradient(#eee, #bbb); /* For Safari 5.1 to 6.0 */
+    /* background: -o-linear-gradient(#eee, #bbb); /* For Opera 11.1 to 12.0 */
+    /* background: -moz-linear-gradient(#eee, #bbb); /* For Firefox 3.6 to 15 */
+    /* background: linear-gradient(#eee, #bbb); /* Standard syntax (must be last) */
+    /* background-image: url(../images/sharpEdges.png);*/
+    background: 
+    	linear-gradient(
+			rgba(0, 0, 0, 0.5), 
+			rgba(0, 0, 0, 0.9)
+			),
+    	url(../images/background.jpg) no-repeat center center;;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/image1280x283.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/image1280x283.jpg', sizingMethod='scale')";
+}
+
+h1, h2, h3, h4, h5 {
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    transition: 1.5s;
+}
+
+a:hover {
+    opacity: .5;
+    transition: 1.5s;
+}
+
+#topBar {
+    background: #3E212D;
+    color: #FFF;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    opacity: .9;
+    box-shadow: #111 -1px 4px 10px;
+}
+
+header .omega {
+    text-align: right;
+}
+
+header h1, header nav ul {
+    margin: 0;
+}
+
+/* NAVIGATION */
+
+.sidrToggle {
+    display: none;
+}
+
+.fixed {
+    position: fixed !important;
+    }
+
+nav a {
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background: #250814;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/*nav ul li:after {
+    content: '';
+    margin: 0 10px;
+}*/
+
+nav ul li:last-child:after {
+    content: ' ';
+    margin: 0;
+}
+
+.rippedPaper {
+    background: url(../images/rippedPaper.png);
+    height: 35px;
+    position: fixed;
+    width: 100%;
+    top: 55px;
+    z-index: 998;
+    opacity: .75;
+    display: none;
+}
+
+main {
+    padding: 125px 0 50px 0;
+}
+
+#calendar {
+    margin: 50px 0;
+}
+
+/* CALENDAR STYLES */
+
+.fc-button-group, .fc button {
+    display: block;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #3E212D !important;
+    opacity: .1;
+}
+
+.fc-view-container {
+	opacity: .8;
+}
+
+
+/* EVENT SCROLL */
+
+.events {
+    position: relative;
+    margin: 50px 0 0 0;
+}
+
+.simply-scroll {
+    position: relative;
+    width: 100%;
+    height: auto;
+    }
+
+.simply-scroll .simply-scroll-btn-left, .simply-scroll .simply-scroll-btn-right {
+    position: absolute;
+    top: 115px;
+    opacity: .5;
+}
+
+.simply-scroll-back:after {
+    font-family: 'FontAwesome';
+    content: '\f104';
+    display: block;
+    font-size: 75px;
+    color: #eee;
+    
+}
+    
+.simply-scroll-forward:after {
+    font-family: 'FontAwesome';
+    content: '\f105';
+    display: block;
+    font-size: 75px;
+    text-align: right;
+    color: #eee;
+}
+
+.simply-scroll .simply-scroll-btn-left.disabled, .simply-scroll .simply-scroll-btn-right.disabled {
+    opacity: .2;
+}
+
+.simply-scroll .simply-scroll-clip {
+    height: 250px;
+    width: 100%;
+    }
+ 
+#scroller {
+    height: 250px;
+    }
+
+#scroller li {
+    height: auto;
+}
+
+/* STICKY FOOTER */
+
+.padding {
+    padding-top: 50px;
+}
+
+footer {
+    background: #111;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/*================== MEDIA QUERIES ================== */
+
+/*  #Mobile (Portrait) */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+    
+        .mainNav {
+            display: none;
+        } 
+    
+        #sidr-menu i {
+            display: inline-block;
+            background: #250814;
+            color: #FFF;
+            border-radius: 3px;
+            font-size: 30px;
+            padding: 5px 8px;
+        }
+        
+        nav .icon-reorder.icon-2x {
+            background: #fe3737;
+            color: #fff;
+            padding: 5px 7px;
+        }
+        
+        .sidrToggle {
+            display: inline-block;
+            width: 50%;
+        }
+    
+        h1 {
+            display: inline-block;
+            width: 48%;
+            text-align: right;
+        }
+    
+        nav {
+            text-align: left;
+        }
+
+        
+    }

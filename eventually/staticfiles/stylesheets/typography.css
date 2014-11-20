@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Jura:300);
+
+
+/* Typography
+================================================== 
+
+32px = 2 rem
+30px = 1.875 rem
+28px = 1.75 rem
+26px = 1.625 rem
+24px = 1.5 rem
+22px = 1.375 rem
+20px = 1.25 rem
+18px = 1.125 rem
+16px = 1 rem
+14px = 0.875 rem
+12px = 0.75 rem
+10px = 0.625 rem
+8px = 0.5 rem
+
+(target font size) / (base font size(16)) = REM value
+
+
+*/
+
+html, * {
+	font-size: 100% /* Browser default (1 rem = 16px) */
+}
+
+body {
+    font-family: 'Jura', sans-serif;
+	font-size: 13px; font-size: .8125rem;
+    font-weight: 300;
+	line-height: 26px; line-height: 1.625rem;
+}
+
+h1, #calendar h2 {
+    font-family: 'Shadows Into Light', sans-serif;
+}
+
+h2, h3, h4, h5 {
+    font-family: 'Jura', sans-serif;
+}
+
+h1 {
+	font-size: 24px; font-size: 1.5rem;
+	line-height: 36px; line-height: 2.25rem;
+}
+
+h2 {
+	font-size: 25px; font-size: 1.5625rem;
+	line-height: 28px; line-height: 1.75rem;
+}
+
+h2.welcome {
+	font-size: 36px; font-size: 2.25rem;
+	line-height: 28px; line-height: 1.75rem;
+}
+
+h3 {
+	font-size: 22px; font-size: 1.375rem;
+	line-height: 22px; line-height: 1.375rem;
+	margin-bottom: 8px; margin-bottom: 0.5rem;
+}
+
+h4 {
+	font-size: 18px; font-size: 1.125rem;
+	line-height: 18px; line-height: 1.125rem;
+	margin-bottom: 4px; margin-bottom: 0.25rem;
+}
+
+nav {
+    font-size: 16px; font-size: 1rem;
+}
