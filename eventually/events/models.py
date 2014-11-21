@@ -1,5 +1,7 @@
 import django.db.models
 import django.contrib.auth
+from django.db.models.signals import post_save
+from django.core.exceptions import ValidationError
 
 class Event(django.db.models.Model):
     host = django.db.models.ForeignKey(django.contrib.auth.models.User, related_name='event_host')
@@ -19,8 +21,12 @@ class Event(django.db.models.Model):
         if self.start_time < self.end_time:
             super(Event, self).save(*args, **kwargs)
         else:
-            raise ValidationError
-        
-            #Add this to a post_save signal instead of extending save function
-        # if not self.pk and self.host:
-        #     self.guests.add(self.host)
+            raise ValidationError('Start time must be earlier than end time.')
+
+# This section needs some work, its not saving instance guests addition
+# def add_host(sender, instance, created, **kwargs):
+#     if created:
+#         instance.guests.add(instance.host)
+#         instance.save()
+
+# post_save.connect(add_host, sender=Event)

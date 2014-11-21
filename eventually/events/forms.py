@@ -1,3 +1,31 @@
+from django import forms
+import events
+
+class EventForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(EventForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = events.models.Event
+        fields = ['title', 'description', 'event_photo', 'start_time', 'end_time',]
+
+
+        # Widget examples
+
+        #     labels = {
+        #     'name': _('Writer'),
+        # }
+        # help_texts = {
+        #     'name': _('Some useful help text.'),
+        # }
+        # error_messages = {
+        #     'name': {
+        #         'max_length': _("This writer's name is too long."),
+        #     },
+        # }
+
+
 #Example of image size validation, will be necessary at a later time.
 
 # from django.core.files.images import get_image_dimensions

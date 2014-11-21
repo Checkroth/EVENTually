@@ -46,7 +46,9 @@
             <ul id="scroller">
                 {% for event in events %}
                 <li>
+                    {% if event.photo %}
                     <img src="{{ event.event_photo.url }}"> <br />
+                    {% endif %}
                     {{ event.title }} <br />
                     {{ event.start_time }}      {{ event.end_time }}
                     {{ event.description }}
