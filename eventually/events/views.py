@@ -12,7 +12,7 @@ def my_events(request):
 
     return render(request, 'events/my_events.html', { 
         'user': user,
-        'events': my_events
+        'events': my_events,
         })
 
 def create_event(request):
@@ -22,7 +22,7 @@ def create_event(request):
             # Need to figure out the urls for rendering events based on id, then pull it in this render
             return render(request, 'events/_event.html/{}').format(1)
     else:
-        form = events.forms.EventForm(initial={'host'=request.user})
+        form = events.forms.EventForm(initial={'host': request.user})
     return render(request, 'events/create_event.html', {
         'form': form,
         })

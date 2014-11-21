@@ -46,7 +46,7 @@
             <ul id="scroller">
                 {% for event in events %}
                 <li>
-                    <a href="{{ url 'show_event' event.id }}">
+                    <a href="{% url 'show_event' event.id %}">
                         {% if event.photo %}
                         <img src="{{ event.event_photo.url }}"> <br />
                         {% else %}
