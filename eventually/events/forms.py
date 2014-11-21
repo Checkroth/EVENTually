@@ -1,5 +1,6 @@
 from django import forms
 import events
+from django.core.files.images import get_image_dimensions
 
 class EventForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -9,6 +10,19 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = events.models.Event
         fields = ['title', 'description', 'event_photo', 'start_time', 'end_time',]
+
+    def clean_picture(self):
+        picture = self.cleaned_data.get('event_photo')
+        if not picture:
+            raise forms.ValidationError("No image!")
+        else:
+            w, h = get_image_dimensions(picture)
+            if w < 100:
+                raise forms.ValidationError("The image must be at least 100x100. The width of this image is {}".format(w))
+            if h < 100:
+                raise forms.ValidationError("The image must be at least 100x100. The height of this image is {}".format(h))
+        return picture
+
 
 
         # Widget examples
@@ -24,22 +38,3 @@ class EventForm(forms.ModelForm):
         #         'max_length': _("This writer's name is too long."),
         #     },
         # }
-
-
-#Example of image size validation, will be necessary at a later time.
-
-# from django.core.files.images import get_image_dimensions
-# class myForm(forms.ModelForm):
-#    class Meta:
-#        model = myModel
-#    def clean_picture(self):
-#        picture = self.cleaned_data.get("picture")
-#        if not picture:
-#            raise forms.ValidationError("No image!")
-#        else:
-#            w, h = get_image_dimensions(picture)
-#            if w != 100:
-#                raise forms.ValidationError("The image is %i pixel wide. It's supposed to be 100px" % w)
-#            if h != 200:
-#                raise forms.ValidationError("The image is %i pixel high. It's supposed to be 200px" % h)
-#        return picture
