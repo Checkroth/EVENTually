@@ -26,3 +26,10 @@ def create_event(request):
     return render(request, 'events/create_event.html', {
         'form': form,
         })
+
+def show_event(request, event_id):
+    event = events.models.Event.objects.get_or_404(id=event_id)
+    return render(request, 'events/_event.html', {
+        'event': event,
+        })
+    # Need to do the url based jangles here
