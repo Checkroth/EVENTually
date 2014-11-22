@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import events
+import events.forms
 
 # Create your views here.
 def my_events(request):
@@ -19,8 +20,11 @@ def create_event(request):
     if request.POST:
         form = events.forms.EventForm(request.POST, request.FILES)
         if form.is_valid():
-            # Need to figure out the urls for rendering events based on id, then pull it in this render
-            return render(request, 'events/_event.html/{}').format(1)
+            user = request.user
+            event = form.save(False)
+            event.host = user
+            event.save()
+            return my_events(request)
     else:
         form = events.forms.EventForm(initial={'host': request.user})
     return render(request, 'events/create_event.html', {

@@ -126,7 +126,7 @@ nav ul li:last-child:after {
 }
 
 main {
-    padding: 125px 0 50px 0;
+    padding: 60px 0 50px 0;
 }
 
 #calendar {
@@ -202,6 +202,17 @@ hr {
 
 #scroller li {
     height: auto;
+}
+
+/* FORMS */
+
+label {
+    display: block;
+    color: white;
+}
+
+input {
+    display: block;
 }
 
 /* STICKY FOOTER */
