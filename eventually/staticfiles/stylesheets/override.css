@@ -50,6 +50,10 @@ a:hover {
     transition: 1.5s;
 }
 
+.logo-link, .logo-link:hover {
+    color: #FFF;
+}
+
 #topBar {
     background: #3E212D;
     color: #FFF;
