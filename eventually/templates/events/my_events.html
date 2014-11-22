@@ -1,19 +1,24 @@
 {% extends "base.html" %}
 
 {% block main %}
-THIS IS A NEW BLOCK
+<main>
+	<h1>Welcome, {{ user.username }}</h1>
 
-<h1>Welcome, {{ user.username }}</h1>
+	{% if events %}
 
-{% if events %}
+	{% for event in events %}
 
-{% for event in events %}
+	<div class='event' style="background-color: rgba(255, 255, 255, 0.6);"> 
+		{{ event.title }} <br/>
+		{{ event.description }} <br/>
+		{{ event.start_time }} <br/>
+		{{ event.end_time }} <br/>
+	</div>
 
-<div class='event'> {{ event.title }} </div>
-{% endfor %}
+	{% endfor %}
 
-{% else %}
-<h1>Sorry, you don't have any events</h1>
-{% endif %}
-
+	{% else %}
+	<h1>Sorry, you don't have any events</h1>
+	{% endif %}
+</main>
 {% endblock %}
