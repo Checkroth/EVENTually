@@ -57,7 +57,7 @@
                                 <li><a href="/create_event">+ Event</a></li>
                                 <li><a href="/my_events">My Events</a></li>
                                 <li><a href="#">Settings</a></li>
-                                <li><a href="/accounts/logout">Log Off</a></li>
+                                <li><a href="javascript:void(0);" onclick="$('#js-logout-form').submit();">Log Off</a></li>
                             </ul>
                         </nav>
                         {% endblock %}
@@ -69,9 +69,12 @@
                                 <li><a href="/create_event">+ Event</a></li>
                                 <li><a href="/my_events">My Events</a></li>
                                 <li><a href="#">Settings</a></li>
-                                <li><a href="/accounts/logout">Log Off</a></li>
+                                <li><a href="javascript:void(0);" onclick="$('#js-logout-form').submit();">Log Off</a></li>
                             </ul>
                         </nav>
+                        <form id="js-logout-form" action="/accounts/logout/" method="post">
+                            {% csrf_token %}
+                        </form>
                         {% endblock %}
                     </div>
                 </div>
