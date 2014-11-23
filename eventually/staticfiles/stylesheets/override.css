@@ -50,10 +50,6 @@ a:hover {
     transition: 1.5s;
 }
 
-.logo-link, .logo-link:hover {
-    color: #FFF;
-}
-
 #topBar {
     background: #3E212D;
     color: #FFF;
@@ -126,14 +122,53 @@ nav ul li:last-child:after {
 }
 
 main {
-    padding: 60px 0 50px 0;
+    padding: 125px 0 50px 0;
 }
+
+/* LOGIN PAGE STYLES */
+
+.login {
+    display: inline-block;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    margin-left: -170px;
+    background: #3E212D;
+    opacity: .85;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.login input {
+    margin-bottom: 5px;
+    color: #3E212D;
+    width: 100%;
+}
+
+.login button {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    transition: 1.5s;
+    margin: 20px 10px 0 0;
+    
+}
+
+.login button:hover {
+    background: #fff;
+    color: #3E212D;
+}
+
+/* CALENDAR STYLES */
 
 #calendar {
     margin: 50px 0;
 }
-
-/* CALENDAR STYLES */
 
 .fc-button-group, .fc button {
     display: block;
@@ -202,17 +237,6 @@ hr {
 
 #scroller li {
     height: auto;
-}
-
-/* FORMS */
-
-label {
-    display: block;
-    color: white;
-}
-
-input {
-    display: block;
 }
 
 /* STICKY FOOTER */
