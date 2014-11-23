@@ -20,6 +20,8 @@
     <link href="{{ STATIC_URL }}stylesheets/normalize.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}stylesheets/skeleton.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}stylesheets/typography.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.print.css" rel="stylesheet">
     {% block stylesheets %}
     {% endblock %}
     <link href="{{ STATIC_URL }}stylesheets/jquery.simplyscroll.css" media="all" rel="stylesheet">
@@ -49,6 +51,7 @@
                 </div>
                 <div class="twelve columns omega">
                     <div id="sidr">
+                        {% block sidrNav %}
                         <nav>
                             <ul>
                                 <li><a href="/create_event">+ Event</a></li>
@@ -57,8 +60,10 @@
                                 <li><a href="/accounts/logout">Log Off</a></li>
                             </ul>
                         </nav>
+                        {% endblock %}
                     </div>
                     <div class="mainNav">
+                    	{% block mainNav %}
                         <nav>
                             <ul>
                                 <li><a href="/create_event">+ Event</a></li>
@@ -67,12 +72,14 @@
                                 <li><a href="/accounts/logout">Log Off</a></li>
                             </ul>
                         </nav>
+                        {% endblock %}
                     </div>
                 </div>
             </header>
         </div>
     </section>
-
+	
+	<!-- MAIN CONTENT -->
     {% block main %}
     {% endblock %}
 
