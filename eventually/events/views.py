@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 import events
 import events.forms
 
@@ -24,7 +25,7 @@ def create_event(request):
             event = form.save(False)
             event.host = user
             event.save()
-            return my_events(request)
+            return redirect('my_events')
     else:
         form = events.forms.EventForm(initial={'host': request.user})
     return render(request, 'events/create_event.html', {
