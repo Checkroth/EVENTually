@@ -50,6 +50,10 @@ a:hover {
     transition: 1.5s;
 }
 
+.logo-link, .logo-link:hover {
+    color: #fff;
+}
+
 #topBar {
     background: #3E212D;
     color: #FFF;
@@ -143,7 +147,7 @@ main {
     margin-top: 60px;
 }
 
-.login input {
+.login input:not([type="checkbox"]) {
     margin-bottom: 5px;
     color: #3E212D;
     width: 100%;
