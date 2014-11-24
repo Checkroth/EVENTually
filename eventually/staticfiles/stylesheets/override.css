@@ -125,6 +125,10 @@ main {
     padding: 85px 0 50px 0;
 }
 
+.logo-link, .logo-link:hover {
+    color: #fff;
+}
+
 /* LOGIN PAGE STYLES */
 
 .login {
@@ -143,7 +147,7 @@ main {
     margin-top: 60px;
 }
 
-.login input {
+.login input:not([type="checkbox"]) {
     margin-bottom: 5px;
     color: #3E212D;
     width: 100%;
