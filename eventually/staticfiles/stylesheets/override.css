@@ -50,10 +50,6 @@ a:hover {
     transition: 1.5s;
 }
 
-.logo-link, .logo-link:hover {
-    color: #fff;
-}
-
 #topBar {
     background: #3E212D;
     color: #FFF;
@@ -147,7 +143,7 @@ main {
     margin-top: 60px;
 }
 
-.login input:not([type="checkbox"]) {
+.login input {
     margin-bottom: 5px;
     color: #3E212D;
     width: 100%;
@@ -234,6 +230,88 @@ input[type="file"] {
 
 textarea {
     width: 100%;
+}
+
+/* MAIN EVENT STYLES */
+
+.flex-wrapper {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex; 
+    margin-top: 30px;
+}
+
+main .thirteen.columns {
+    margin-right: 0;
+    color: #fff;
+}
+
+main .thirteen.columns h2, main .three.columns h4 {
+    margin-top: 0;
+}
+
+main .three.columns h4 {
+    border-bottom: 1px solid #250814;
+    padding-bottom: 10px;
+}
+
+main .three.columns {
+    background: #3E212D;
+    opacity: .85;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.three.columns ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.three.columns ul li {
+    margin-bottom: 5px;
+}
+
+.three.columns ul li a {
+    color: #FFF;
+    display: block;
+    padding: 5px 10px;
+}
+
+.three.columns ul li a:hover {
+    background: #250814;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+figure, section.date {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+figure img {
+    width: 100%;
+    max-height: 250px;
+    display: block;
+}
+
+section.date, section.description {
+    background: #3E212D;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    opacity: .85;
+    font-size: 15px;
+}
+
+.date p {
+    margin: 0;
+}
+
+.description h3 {
+    margin-top: 0;
 }
 
 /* CALENDAR STYLES */
@@ -371,6 +449,19 @@ footer p {
         nav {
             text-align: left;
         }
-
+    
+        .flex-wrapper {
+            display: block;
+        }
+    
+        figure img {
+            width: 100%;
+            max-height: auto;
+            display: block;
+        }
+    
+        main .container .three.columns {
+            margin-bottom: 20px;
+        }
         
     }
