@@ -25,7 +25,7 @@ def create_event(request):
             event = form.save(False)
             event.host = user
             event.save()
-            return redirect('my_events')
+            return redirect('{}'.format(event.get_absolute_url()))
     else:
         form = events.forms.EventForm(initial={'host': request.user})
     return render(request, 'events/create_event.html', {
@@ -33,8 +33,8 @@ def create_event(request):
         })
 
 def show_event(request, event_id):
-    event = events.models.Event.objects.get_or_404(id=event_id)
-    return render(request, 'events/_event.html', {
+    event = events.models.Event.objects.get(id=event_id)
+    return render(request, 'events/main_event.html', {
         'event': event,
         })
     # Need to do the url based jangles here

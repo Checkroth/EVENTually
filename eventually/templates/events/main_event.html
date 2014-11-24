@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    <title>[EVENTually] | Event Title</title>
+    <title>[EVENTually] | {{ event.title }}</title>
 {% endblock %}
 
 {% block sidrNav %}
-{% endblock %}
-
-{% block mainNav %}
 {% endblock %}
 
 {% block main %}
@@ -23,16 +20,21 @@
                     </ul>
                 </div>
                 <div class="thirteen columns">
-                    <h2>Event Title</h2>
+                    <h2>{{ event.title }}</h2>
                     <figure>
+                        {% if event.event_photo %}
+                        <img src="{{ event.event_photo.url }}" alt="main event photo">
+                        {% else %}
                         <img src="images/test.jpg" alt="main event photo">
+                        {% endif %}
                     </figure>
                     <section class="date">
-                        <p>EVENT DATE AND TIME GOES HERE</p>
+                        <p>Start: {{ event.start_time}}</p>
+                        <p>End: {{ event.end_time }}</p>
                     </section>
                     <section class="description">
                         <h3>Event Description:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                        <p>{{ event.description }}</p>
                         
                     </section>
                 </div>

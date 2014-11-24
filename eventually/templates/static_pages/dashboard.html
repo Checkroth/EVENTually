@@ -19,8 +19,8 @@
             <ul id="scroller">
                 {% for event in events %}
                 <li>
-                    <a href="{% url 'show_event' event.id %}">
-                        {% if event.photo %}
+                    <a href="{{ event.get_absolute_url }}">
+                        {% if event.event_photo %}
                         <img src="{{ event.event_photo.url }}"> <br />
                         {% else %}
                         <img src="{{ STATIC_URL }}images/default_event_photo.png/"><br />
