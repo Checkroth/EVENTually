@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- PAGE TITLE -->
+    <title>[EVENTually]</title>
+    
+    <!-- STYLESHEETS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/skeleton.css" rel="stylesheet">
+    <link href="css/typography.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.print.css" rel="stylesheet">
+    <link href="css/jquery.simplyscroll.css" media="all" rel="stylesheet">
+    <link href="css/jquery.sidr.dark.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="css/override.css"  rel="stylesheet">
+
+    <!-- JAVASCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.js"></script>
+    <script src="js/jquery.simplyscroll.min.js"></script>
+    <script src="js/jquery.sidr.min.js"></script>
+    <script src="js/bucket.js"></script>
+</head>
+
+<body>
+    <!-- TOP BAR -->
+    <section id="topBar">
+        <div class="container">
+            <header>
+                <div id="logo" class="four columns alpha">
+                    <div class="sidrToggle">
+                        <a id="sidr-menu" href="#sidr"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <h1>[EVENTually]</h1>
+                </div>
+                <div class="twelve columns omega">
+                    <div id="sidr">
+                        <nav>
+                            <ul>
+                                <li><a href="#">+ Event</a></li>
+                                <li><a href="#">My Events</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Log Off</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mainNav">
+                        <nav>
+                            <ul>
+                                <li><a href="#">+ Event</a></li>
+                                <li><a href="#">My Events</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Log Off</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+    
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            <h2 class="welcome">Add An Event</h2>
+            <section class="addEvent">
+                <form id="addEvent">
+                    <table>
+                        <tr>
+                            <td>Main Image (Optional):</td>
+                            <td><input type="file" name="eventImage" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>Title:</td>
+                            <td><input type="text" name="eventTitle"></td>
+                        </tr>
+                         <tr>
+                            <td>Date:</td>
+                            <td><input type="date" name="eventDate"></td>
+                        </tr>
+                         <tr>
+                            <td>Start Time:</td>
+                            <td><input type="time" name="eventStartTime"></td>
+                        </tr>
+                         <tr>
+                            <td>End Time:</td>
+                            <td><input type="time" name="eventEndTime"></td>
+                        </tr>
+                         <tr>
+                            <td>Description:</td>
+                            <td><textarea name="eventDesc"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#"> <i class="fa fa-angle-left"></i> Back</a></td>
+                            <td><button form="addEvent" type="submit" name="login">Add Event</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <!-- PADDING ABOVE FOOTER -->
+    <div class="padding"></div>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2014 House LANnister Inc.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
