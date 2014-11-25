@@ -5,7 +5,7 @@ urlpatterns = patterns('',
     (r'', include('accounts.urls')),
     (r'', include('events.urls')),
     (r'', include('static_pages.urls')),
-    # (r'', include('subevents.urls')),
+    (r'', include('subevents.urls')),
 
     (r'^accounts/', include('allauth.urls')),
     url(r'^admin/', include(admin.site.urls)),
