@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath eventually eventually.wsgi --log-file -
+web: gunicorn --pythonpath eventually.eventually eventually.wsgi --log-file -
