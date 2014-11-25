@@ -116,7 +116,22 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "staticfiles"),
 )
 
-try:
-    from eventually.local_settings import *
-except Exception as e:
-    pass
+
+if os.environ.get('IS_HEROKU', False):
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': '{}'.format(os.environ.get('POSTGRES_NAME')),                     
+        'USER': '{}'.format(os.environ.get('POSTGRES_USER')),
+        'PASSWORD': '{}'.format(os.environ.get('POSTGRES_PASS')),
+        'HOST': '{}'.format(os.environ.get('POSTGRES_HOST')),
+        'PORT': '5432',                     
+    }
+}
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
