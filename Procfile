@@ -1,1 +1,1 @@
-web: gunicorn eventually:eventually --log-file -
+web: gunicorn eventually.eventually:eventually --log-file -
