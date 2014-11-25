@@ -14,6 +14,8 @@ class Event(django.db.models.Model):
     end_time = django.db.models.DateTimeField()
     created_at = django.db.models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return self.title
 
     def subevents(self):
         return self.subevent_set.all()
