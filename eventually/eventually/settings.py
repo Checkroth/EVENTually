@@ -117,6 +117,6 @@ STATICFILES_DIRS = (
 )
 
 try:
-    from local_settings import *
+    from eventually.local_settings import *
 except Exception as e:
     pass
