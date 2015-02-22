@@ -16,9 +16,9 @@ $(document).ready(function() {
                 url: 'my_events_json',
                 dataType: 'json',
                 success: function(events) {
-                    debugger;
                     callback(events.map(function (e) {
                         return {
+                            url: "event/" + e.pk,
                             title: e.fields.title,
                             start: $.fullCalendar.moment(e.fields.start_time),
                             end: $.fullCalendar.moment(e.fields.end_time)
@@ -26,6 +26,9 @@ $(document).ready(function() {
                     }));
                 }
             });
+        },
+        eventClick: function (calEvent) {
+            window.location.href = calEvent.url;
         }
 
     })
