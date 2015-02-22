@@ -1,3 +1,5 @@
+from django.core import serializers
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 import events
@@ -6,16 +8,27 @@ import events.forms
 # Create your views here.
 def my_events(request):
     try:
-    	user = request.user
-    	my_events = events.models.Event.objects.all().filter(host=user)
+        user = request.user
+        my_events = events.models.Event.objects.all().filter(host=user)
     except:
-    	user = {'username': 'no user',}
-    	my_events = []
+        user = {'username': 'no user',}
+        my_events = []
 
     return render(request, 'events/my_events.html', { 
         'user': user,
         'events': my_events,
         })
+
+def my_events_json(request):
+    try:
+        user = request.user
+        my_events = events.models.Event.objects.all().filter(host=user)
+    except:
+        user = {'username': 'no user',}
+        my_events = []
+
+    data = serializers.serialize('json', my_events)
+    return HttpResponse(data, 'application/json')
 
 def create_event(request):
     if request.POST:
