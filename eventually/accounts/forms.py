@@ -13,3 +13,11 @@ class UserForm(forms.ModelForm):
         widgets = {
             'password': forms.PasswordInput()
         }
+
+class UserProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = accounts.models.UserProfile
+        fields = ['birthday', 'profile_picture']
