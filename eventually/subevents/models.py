@@ -26,6 +26,6 @@ class Subevent(django.db.models.Model):
 
     def get_absolute_url(self):
         return reverse('show_subevent', kwargs={
-            'event_id': main_event.pk,
+            'event_id': self.main_event.pk,
             'subevent_id': self.pk,
             })
