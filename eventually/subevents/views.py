@@ -33,7 +33,7 @@ def create_subevent(request, event_id):
 		'form': form,
 		})
 
-def show_subevent(request, subevent_id):
+def show_subevent(request, event_id, subevent_id):
 	subevent = subevents.models.Subevent.objects.get(id=subevent_id)
 	return render(request, 'subevents/_subevent.html', {
 		'subevent': subevent,
