@@ -5,9 +5,8 @@ import subevents
 # Create your views here.
 
 # Need login required flag here
-def create_subevent(self, event_id, subevent_id):
+def create_subevent(self, event_id):
 	main_event = events.models.Event.objects.get(id=event_id)
-	subevent = subevents.models.Subevent.objects.get(id=subevent_id)
 	if request.user is not main_event.host:
 		# Need more logic for subevent hosts who are not main event hosts (ManyToManyField?)
 		#We obviously need a redirect page here
