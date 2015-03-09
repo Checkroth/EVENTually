@@ -19,7 +19,7 @@ def create_account(request):
             profile.user = user
             profile.save()
 
-            return render(request, 'account/confirmation.html')
+            return redirect('confirmation')
     else:
         form = accounts.forms.UserForm()
         profileForm = accounts.forms.UserProfileForm()
@@ -27,3 +27,6 @@ def create_account(request):
         'form': form,
         'profileForm': profileForm,
         })
+
+def confirmation(request):
+    return render(request, 'account/confirmation.html')
