@@ -1,5 +1,5 @@
 from django import forms
-import events
+import subevents
 from django.core.files.images import get_image_dimensions
 
 #No clue if this actually works
@@ -9,5 +9,5 @@ class SubEventForm(forms.ModelForm):
         super(SubEventForm, self).__init__(*args, **kwargs)
 
     class Meta:
-        model = events.models.Event
+        model = subevents.models.Subevent
         fields = ['title', 'description', 'start_time', 'end_time',]
