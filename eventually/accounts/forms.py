@@ -21,3 +21,4 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = accounts.models.UserProfile
         fields = ['birthday', 'profile_picture']
+        birthday = forms.DateField(widget=forms.DateInput(attrs={'class':'timepicker'}))
