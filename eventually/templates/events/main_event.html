@@ -16,11 +16,11 @@
                     <ul>
                         <li><a href="#">Upcoming</a></li>
                         <li><a href="#">Past</a></li>
-                        <li><a href="{% url 'create_subevent' event_id={{ event.pk }} %}">+ Subevent</a></li>
+                        <li><a href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
                         <br /><br />
                         {% for subevent in event.subevents %}
                         <li>
-                            <a href="{% url 'show_subevent' event_id={{ event.pk }} subevent_id={{ subevent.pk }} %}">
+                            <a href="{% url 'show_subevent' event_id=event.pk subevent_id=subevent.pk %}">
                             {{ subevent.title }}
                             </a>
                         </li>

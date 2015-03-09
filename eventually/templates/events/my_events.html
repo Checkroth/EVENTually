@@ -10,7 +10,7 @@
 		{% for event in events %}
 
 		<div class='event'> 
-		<h3><a href="{% url 'show_event' event_id={{event.pk}} %}">{{ event.title }}</a></h3>
+		<h3><a href="{% url 'show_event' event_id=event.pk %}">{{ event.title }}</a></h3>
 			{{ event.description }} <br/>
 			{{ event.start_time }} <br/>
 			{{ event.end_time }} <br/>
