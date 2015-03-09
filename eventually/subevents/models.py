@@ -18,9 +18,9 @@ class Subevent(django.db.models.Model):
     	# Ensure that the subevent is within the constraints of the main event. This may have to be done in the form class.
         if self.start_time > self.end_time:
         	raise ValidationError('Start time must be earlier than end time')
-        if self.start_time < main_event.start_time:
+        if self.start_time < self.main_event.start_time:
         	raise ValidationError('Subevent must start within the main event\'s timeframe.')
-        if self.end_time > main_event.end_time:
+        if self.end_time > self.main_event.end_time:
         	raise ValidationError('Subevent must end within the main event\'s timeframe')
         super(Subevent, self).save(*args, **kwargs)
 
