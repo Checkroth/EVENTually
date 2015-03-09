@@ -8,13 +8,13 @@ from django.http import HttpResponse
 # Need login required flag here
 def create_subevent(request, event_id):
 	main_event = events.models.Event.objects.get(id=event_id)
-	if request.user is not main_event.host:
-		# Need more logic for subevent hosts who are not main event hosts (ManyToManyField?)
-		#We obviously need a redirect page here
-		return HttpResponse(request, 'static_pages/dashboard.html')
+	# if request.user is not main_event.host:
+	# 	# Need more logic for subevent hosts who are not main event hosts (ManyToManyField?)
+	# 	#We obviously need a redirect page here
+	# 	return HttpResponse(request, 'static_pages/dashboard.html')
 
 	if request.POST:
-		form = subevents.forms.SubeventForm(request.POST, request.FILES)
+		form = subevents.forms.SubeventForm(request.POST)
 		if form.is_valid():
 			user = request.user
 			subevent = form.save(False)
