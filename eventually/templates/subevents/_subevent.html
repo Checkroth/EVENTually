@@ -12,7 +12,7 @@
 	<div class="container">
 	 	<h2>{{ subevent.title }}</h2>
 	 	<h3>{{ subevent.start_time }} to {{ subevent.end_time }}</h3>
-	 	<h3>Brought to you by {{ subevent.host.first_name }} {{ subevent.host.first_name }}
+	 	<h3>Brought to you by {{ subevent.host.first_name }} {{ subevent.host.last_name }}
 	 	<h1><a href="{% url 'show_event' event_id=subevent.main_event.pk %}">Return to main event</a></h1>
 	</div>
 </main>
