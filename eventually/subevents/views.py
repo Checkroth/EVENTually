@@ -11,7 +11,7 @@ def create_subevent(request, event_id):
 	if request.user is not main_event.host:
 		# Need more logic for subevent hosts who are not main event hosts (ManyToManyField?)
 		#We obviously need a redirect page here
-		return HttpResponse(request, 'http://www.google.com')
+		return HttpResponse(request, 'static_pages/dashboard.html')
 
 	if request.POST:
 		form = subevents.forms.SubeventForm(request.POST, request.FILES)
