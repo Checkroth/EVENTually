@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block mainNav %}
+{% endblock %}
+
+{% block sidrNav %}
+{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <h2 class="welcome">Add A Subevent</h2>
+            <section class="form">
+                <form id="addSubEvent" method='post'>
+                    {% csrf_token %}
+                    {{ form }}
+
+                    <button form="addSubEvent" type="submit" name="login">Add Subevent</button>
+                </form>
+            </section>
+        </div>
+    </main>
+{% endblock %}
