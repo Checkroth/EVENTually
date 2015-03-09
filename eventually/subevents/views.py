@@ -20,7 +20,7 @@ def create_subevent(request, event_id):
 			user = request.user
 			subevent = form.save(False)
 			subevent.main_event = main_event
-			# subevent.host = user
+			subevent.host = user
 			subevent.save()
 			return redirect('{}'.format(subevent.get_absolute_url()))
 	else:
