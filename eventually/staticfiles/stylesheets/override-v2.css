@@ -141,18 +141,20 @@ main {
 
 .login {
     display: inline-block;
-    margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    width: 300px;
-    margin-left: -170px;
-    background: #3E212D;
-    opacity: .85;
-    padding: 20px;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 18px;
-    margin-top: 60px;
+  	margin: 0 auto;
+  	position: absolute;
+  	left: 50%;
+  	width: 300px;
+ 	 margin-left: -170px;
+  	background: #442D47;
+  	opacity: .85;
+  	padding: 20px;
+  	color: #fff;
+  	border-radius: 0;
+  	font-size: 18px;
+  	margin-top: 60px;
+  	-webkit-box-shadow: inset 2px 2px 2px 2px #2A132D;
+  	box-shadow: inset 0px 0px 10px 2px #2A132D;
 }
 
 .login input:not([type="checkbox"]) {
