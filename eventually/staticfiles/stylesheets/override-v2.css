@@ -1,0 +1,496 @@
+/* COLORS */
+
+/* PURPLE = #5D4660 */
+/* YELLOW = #FBF6D6 */
+
+
+html {
+    min-height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: relative;
+}
+
+body {
+    background: #5d4660; /* Old browsers */
+	background: -moz-linear-gradient(top,  #5d4660 0%, #fbf6d6 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5d4660), color-stop(99%,#fbf6d6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #5d4660 0%,#fbf6d6 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #5d4660 0%,#fbf6d6 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #5d4660 0%,#fbf6d6 99%); /* IE10+ */
+	background: linear-gradient(to bottom,  #5d4660 0%,#fbf6d6 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d4660', endColorstr='#fbf6d6',GradientType=0 ); /* IE6-9 */
+
+}
+
+.hide {
+	display: none;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    transition: 1.5s;
+}
+
+a:hover {
+    opacity: .5;
+    transition: 1.5s;
+}
+
+#topBar {
+    background: #3E212D;
+    color: #FFF;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    opacity: .9;
+    box-shadow: #111 -1px 4px 10px;
+}
+
+form.login h1 {
+	text-align: center;
+  	font-size: 30px;
+  	margin-bottom: 45px;
+}
+
+form.login p > label {
+	display: none;
+}
+
+header .omega {
+    text-align: right;
+}
+
+header h1, header nav ul {
+    margin: 0;
+}
+
+/* NAVIGATION */
+
+.sidrToggle {
+    display: none;
+}
+
+.fixed {
+    position: fixed !important;
+    }
+
+nav a {
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background: #250814;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/*nav ul li:after {
+    content: '';
+    margin: 0 10px;
+}*/
+
+nav ul li:last-child:after {
+    content: ' ';
+    margin: 0;
+}
+
+.rippedPaper {
+    background: url(../images/rippedPaper.png);
+    height: 35px;
+    position: fixed;
+    width: 100%;
+    top: 55px;
+    z-index: 998;
+    opacity: .75;
+    display: none;
+}
+
+main {
+    padding: 85px 0 50px 0;
+}
+
+.logo-link, .logo-link:hover {
+    color: #fff;
+}
+
+/* LOGIN PAGE STYLES */
+
+.login {
+    display: inline-block;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    margin-left: -170px;
+    background: #3E212D;
+    opacity: .85;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+.login input:not([type="checkbox"]) {
+    margin-bottom: 5px;
+  	color: #3E212D;
+	width: 100%;
+  	border: none;
+  	padding: 5px;
+}
+
+.login button {
+    display: inline-block;
+  	border: none;
+  	border-radius: 0;
+  	background: #77607A;
+  	font-size: 16px;
+  	transition: 1s;
+  	margin: 20px 10px 0 0;
+  	text-transform: uppercase;
+  	width: 100%;
+    
+}
+
+.login button:hover {
+    background: #2A132D;
+  	color: #fff;
+}
+
+p.signup {
+  	text-transform: uppercase;
+  	position: absolute;
+  	display: inline-block;
+  	margin: 0 auto;
+  	position: absolute;
+  	left: 50%;
+  	width: 300px;
+  	margin-left: -170px;
+  	top: 405px;
+  	color: #2A132D;
+}
+
+/* ADD EVENT FORM STYLES */
+
+#addEvent tbody, #addEvent td {
+    background: none !important;
+    background-color: none !important;
+}
+
+#addEvent table {
+    width: 100%;
+}
+
+#addEvent td {
+    width: 50%;
+    padding: 5px;
+    vertical-align: top;
+}
+
+#addEvent td:first-child {
+    text-align: right;
+}
+
+.addEvent {
+    margin: 0 auto;
+    background: #3E212D;
+    opacity: .85;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.addEvent input {
+    margin-bottom: 20px;
+    height: 25px;
+    width: 150px;
+    color: #3E212D;
+}
+
+input[type="file"] {
+    width: 100%;
+}
+
+.addEvent button, .addEvent a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    transition: 1.5s;
+    margin: 20px 10px 0 0;
+    color: #fff;
+}
+
+.addEvent button:hover, .addEvent a:hover {
+    background: #fff;
+    color: #3E212D;
+    opacity: 1;
+}
+
+.addEvent a {
+    padding: 3px 5px;
+}
+
+textarea {
+    width: 100%;
+}
+
+/* MAIN EVENT STYLES */
+
+.flex-wrapper {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex; 
+    margin-top: 30px;
+}
+
+main .thirteen.columns {
+    margin-right: 0;
+    color: #fff;
+}
+
+main .thirteen.columns h2, main .three.columns h4 {
+    margin-top: 0;
+}
+
+main .three.columns h4 {
+    border-bottom: 1px solid #250814;
+    padding-bottom: 10px;
+}
+
+main .three.columns {
+    background: #3E212D;
+    opacity: .85;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.three.columns ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.three.columns ul li {
+    margin-bottom: 5px;
+}
+
+.three.columns ul li a {
+    color: #FFF;
+    display: block;
+    padding: 5px 10px;
+}
+
+.three.columns ul li a:hover {
+    background: #250814;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+figure, section.date {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+figure img {
+    width: 100%;
+    max-height: 250px;
+    display: block;
+}
+
+section.date, section.description {
+    background: #3E212D;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    opacity: .85;
+    font-size: 15px;
+}
+
+.date p {
+    margin: 0;
+}
+
+.description h3 {
+    margin-top: 0;
+}
+
+/* CALENDAR STYLES */
+
+#calendar {
+    margin: 50px 0;
+}
+
+.fc-button-group, .fc button {
+    display: block;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #3E212D !important;
+    opacity: .1;
+}
+
+.fc-view-container {
+	opacity: .8;
+}
+
+
+/* EVENT SCROLL */
+
+.events {
+    position: relative;
+    margin: 50px 0 0 0;
+}
+
+.simply-scroll {
+    position: relative;
+    width: 100%;
+    height: auto;
+    }
+
+.simply-scroll .simply-scroll-btn-left, .simply-scroll .simply-scroll-btn-right {
+    position: absolute;
+    top: 115px;
+    opacity: .5;
+}
+
+.simply-scroll-back:after {
+    font-family: 'FontAwesome';
+    content: '\f104';
+    display: block;
+    font-size: 75px;
+    color: #eee;
+    
+}
+    
+.simply-scroll-forward:after {
+    font-family: 'FontAwesome';
+    content: '\f105';
+    display: block;
+    font-size: 75px;
+    text-align: right;
+    color: #eee;
+}
+
+.simply-scroll .simply-scroll-btn-left.disabled, .simply-scroll .simply-scroll-btn-right.disabled {
+    opacity: .2;
+}
+
+.simply-scroll .simply-scroll-clip {
+    height: 250px;
+    width: 100%;
+    }
+ 
+#scroller {
+    height: 250px;
+    }
+
+#scroller li {
+    height: auto;
+}
+
+/* STICKY FOOTER */
+
+.padding {
+    padding-top: 50px;
+}
+
+footer {
+    background: #FFFFF0;
+  	color: #AFAA8A;
+  	position: absolute;
+  	left: 0;
+  	bottom: 0;
+  	width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/*================== MEDIA QUERIES ================== */
+
+/*  #Mobile (Portrait) */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+    
+        .mainNav {
+            display: none;
+        } 
+    
+        #sidr-menu i {
+            display: inline-block;
+            background: #250814;
+            color: #FFF;
+            border-radius: 3px;
+            font-size: 30px;
+            padding: 5px 8px;
+        }
+        
+        nav .icon-reorder.icon-2x {
+            background: #fe3737;
+            color: #fff;
+            padding: 5px 7px;
+        }
+        
+        .sidrToggle {
+            display: inline-block;
+            width: 50%;
+        }
+    
+        h1 {
+            display: inline-block;
+            width: 48%;
+            text-align: right;
+        }
+    
+        nav {
+            text-align: left;
+        }
+    
+        .flex-wrapper {
+            display: block;
+        }
+    
+        figure img {
+            width: 100%;
+            max-height: auto;
+            display: block;
+        }
+    
+        main .container .three.columns {
+            margin-bottom: 20px;
+        }
+        
+    }
