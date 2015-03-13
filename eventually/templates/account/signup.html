@@ -1,39 +1,11 @@
 {% extends "base.html" %}
-<<<<<<< HEAD
 
 {% block page_title %}
 	<title>[EVENTually] | Sign Up</title>
 {% endblock %}
 
 {% block main %}
-<main id="signup">
-    <div class="container">
-    <h2>Sign Up</h2>        
-        <form id="signup_form" method="post" action="{% url 'account_signup' %}">
-          {% csrf_token %}
-          <p>
-            <label for="id_fname">First Name:</label> 
-            <input autofocus="autofocus" id="id_fname" maxlength="30" name="first_name" placeholder="First Name" type="text">
-          </p>
-          <p>
-            <label for="id_lname">Last Name:</label> 
-            <input autofocus="autofocus" id="id_lname" maxlength="30" name="last_name" placeholder="Last Name" type="text">
-          </p>
-=======
->>>>>>> master
-
-{% block page_title %}
-    <title>[EVENTually] | Sign Up</title>
-{% endblock %}
-
-{% block mainNav %}
-{% endblock %}
-
-{% block sidrNav %}
-{% endblock %}
-
-{% block main %}
-  <main>
+  <main id="signup">
     <div class="container">
         <h2>Sign Up</h2>
         <section class="form">  
@@ -48,10 +20,5 @@
           </form>
         </section>
     </div>
-<<<<<<< HEAD
 </main>
-=======
-  </main>
->>>>>>> master
-
 {% endblock %}

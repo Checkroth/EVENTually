@@ -4,9 +4,6 @@
     <title>[EVENTually] | {{ event.title }}</title>
 {% endblock %}
 
-{% block sidrNav %}
-{% endblock %}
-
 {% block main %}
     <main id="main-event">
         <div class="container">
@@ -18,7 +15,7 @@
                         {% if event.event_photo %}
                         <img src="{{ event.event_photo.url }}" alt="main event photo">
                         {% else %}
-                        <img src="images/test.jpg" alt="main event photo">
+                        <img src="images/bg-img3.jpg" alt="main event photo">
                         {% endif %}
                     </figure>
                     <section class="date">
@@ -30,9 +27,10 @@
                         </div>
                     </section>
                     <section class="description">
+                    	<div>
                         <h3><span>Event Description</span></h3>
                         <p>{{ event.description }}</p>
-                        
+                        </div>
                     </section>
                 </div>
                 
@@ -47,6 +45,7 @@
                             {{ subevent.title }}
                             </a>
                         </li>
+                        <li><a class="add-sub" href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
                         {% endfor %}
                         </ul>
                     </div>
@@ -56,7 +55,6 @@
                     	<ul>
                         	<li><a href="#">Upcoming</a></li>
                         	<li><a href="#">Past</a></li>
-                        	<li><a href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
                     	</ul>
                     </div>
                     
