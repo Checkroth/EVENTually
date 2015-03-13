@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
+{% block page_title %}
+	<title>[EVENTually] | Add Subevent</title>
+{% endblock %}
+
 {% block main %}
-    <main>
+    <main id="add-event">
         <div class="container">
-            <h2 class="welcome">Add A Subevent</h2>
+            <h2>Add A Subevent</h2>
             <section class="form">
                 <form id="addSubEvent" method='post'>
                     {% csrf_token %}
-                    {{ form }}
+                    {{ form.as_p }}
 
                     <button form="addSubEvent" type="submit" name="login">Add Subevent</button>
                 </form>

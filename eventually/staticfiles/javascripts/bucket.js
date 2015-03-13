@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-<<<<<<< HEAD
-=======
     // CALENDAR
 
     $('#calendar').fullCalendar({
@@ -41,7 +39,7 @@ $(document).ready(function() {
         	   auto: false,
 			 speed: 5
      });
->>>>>>> master
+
     
     // SIDR MOBILE NAV
     

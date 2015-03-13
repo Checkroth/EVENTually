@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
-
-{% block mainNav %}
-{% endblock %}
-
-{% block sidrNav %}
+{% block page_title %}
+	<title>[EVENTually] | {{ subevent.title }}</title>
 {% endblock %}
 
 {% block main %}
-<main>
+<main id="sub-event">
 	<div class="container">
 	 	<h2>{{ subevent.title }}</h2>
-	 	<h3>{{ subevent.start_time }} to {{ subevent.end_time }}</h3>
-	 	<h3>Brought to you by {{ subevent.host.first_name }} {{ subevent.host.last_name }}
-	 	<h1><a href="{% url 'show_event' event_id=subevent.main_event.pk %}">Return to main event</a></h1>
+	 	<figure>
+            {% if event.event_photo %}
+               <img src="{{ subevent.event_photo.url }}" alt="main event photo">
+            {% else %}
+               <img src="images/test.jpg" alt="main event photo">
+            {% endif %}
+        </figure>
+	 	<p class="date">{{ subevent.start_time }} to {{ subevent.end_time }}</p>
+	 	<p class="host">Brought to you by {{ subevent.host.first_name }} {{ subevent.host.last_name }}</p>
+	 	<p class="description">{{ subevent.description }}</p>
+	 	<p class="back-to-main"><a href="{% url 'show_event' event_id=subevent.main_event.pk %}"><i class="fa fa-arrow-left"></i> Return to main event</a></p>
 	</div>
 </main>
 {% endblock %}
