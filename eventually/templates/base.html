@@ -16,24 +16,24 @@
     {% endblock %}
     
     <!-- STYLESHEETS -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}stylesheets/normalize.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}stylesheets/skeleton.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}stylesheets/typography.css" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.css" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.print.css" rel="stylesheet">
-    {% block stylesheets %}
-    {% endblock %}
     <link href="{{ STATIC_URL }}stylesheets/jquery.simplyscroll.css" media="all" rel="stylesheet">
-    <link href="{{ STATIC_URL }}stylesheets/jquery.sidr.dark.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}stylesheets/meanmenu.css" rel="stylesheet">
+    {% block stylesheets %}
     <link href="{{ STATIC_URL }}stylesheets/override-v2.css"  rel="stylesheet">
+    {% endblock %}
 
     <!-- JAVASCRIPTS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.0/fullcalendar.min.js"></script>
     <script src="{{ STATIC_URL }}javascripts/jquery.simplyscroll.min.js"></script>
-    <script src="{{ STATIC_URL }}javascripts/jquery.sidr.min.js"></script>
+    <script src="{{ STATIC_URL }}javascripts/jquery.meanmenu.js"></script>
     <script src="{{ STATIC_URL }}javascripts/bucket.js"></script>
 </head>
 
@@ -44,32 +44,19 @@
         <div class="container">
             <header>
                 <div id="logo" class="four columns alpha">
-                    <div class="sidrToggle">
-                        <a id="sidr-menu" href="#sidr"><i class="fa fa-bars"></i></a>
-                    </div>
+                	{% block homeLink %}
                     <h1><a href="/" class="logo-link">[EVENTually]</a></h1>
+                    {% endblock %}
                 </div>
                 <div class="twelve columns omega">
-                    <div id="sidr">
-                        {% block sidrNav %}
-                        <nav>
-                            <ul>
-                                <li><a href="/create_event">+ Event</a></li>
-                                <li><a href="/my_events">My Events</a></li>
-                                <li><a href="#">Settings</a></li>
-                                <li><a href="javascript:void(0);" onclick="$('#js-logout-form').submit();">Log Off</a></li>
-                            </ul>
-                        </nav>
-                        {% endblock %}
-                    </div>
                     <div class="mainNav">
-                    	{% block mainNav %}
+                    	{% block nav %}
                         <nav>
                             <ul>
                                 <li><a href="/create_event">+ Event</a></li>
                                 <li><a href="/my_events">My Events</a></li>
                                 <li><a href="#">Settings</a></li>
-                                <li><a href="javascript:void(0);" onclick="$('#js-logout-form').submit();">Log Off</a></li>
+                                <li><a href="javascript:void(0);" onclick="$('#js-logout-form').submit();"><i class="fa fa-power-off"></i> Log Off</a></li>
                             </ul>
                         </nav>
                         <form id="js-logout-form" action="/accounts/logout/" method="post">
@@ -81,6 +68,7 @@
             </header>
         </div>
     </section>
+
 	
 	<!-- MAIN CONTENT -->
     {% block main %}

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    <title>[EVENTually] | Homepage</title>
+    <title>[EVENTually] | Home</title>
 {% endblock %}
 
 {% block main %}
-<main>
+<main id="dashboard">
 	<div class="container">
-        <h2 class="welcome">Welcome, {{ user.username }}!</h2>
+        <h2 class="welcome"><span>Welcome, {{ user.username }}!</span></h2>
         <!-- CALENDAR -->
         <section>
             <div id="calendar"></div>
@@ -21,14 +21,15 @@
                 <li>
                     <a href="{{ event.get_absolute_url }}">
                         {% if event.event_photo %}
-                        <img src="{{ event.event_photo.url }}"> <br />
+                        <img src="{{ event.event_photo.url }}">
                         {% else %}
-                        <img src="{{ STATIC_URL }}images/default_event_photo.png/"><br />
+                        <img src="{{ STATIC_URL }}images/default_event_photo.png/">
                         {% endif %}
                     </a>
-                    {{ event.title }} <br />
-                    {{ event.start_time }}      {{ event.end_time }}
-                    {{ event.description }}
+                    <p class="title">{{ event.title }}</p>
+                    <p class="start">{{ event.start_time }}</p>
+                    <p class="end">{{ event.end_time }}</p>
+                    <p class="description">{{ event.description }}</p>
                 </li>
                 {% endfor %}
             </ul>

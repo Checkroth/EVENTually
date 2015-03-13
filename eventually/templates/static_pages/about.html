@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>[EVENTually] | Who We Are</title>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ STATIC_URL }}stylesheets/homepage.css"  rel="stylesheet">
+{% endblock %}
+
+{% block homeLink %}
+    <h1><a href="#" class="logo-link">[EVENTually]</a></h1>
+{% endblock %}
+
+{% block nav %}
+	<nav>
+		<ul>
+        	<li><a href="location.href={{ login_url }}"><i class="fa fa-power-off"></i> Login</a></li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block main %}
+	<main>
+	<div class="container team">
+        <h2><span>Meet the Team</span></h2>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/anthony.jpg" alt="Anthony"><p>Anthony<br>Broomes-Barbee</p></div>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/charlie.jpg" alt="Andrew"><p>Andrew<br>Hagner</p></div>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/charlie.jpg" alt="Charlie"><p>Charlie<br>Heckroth</p></div>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/charlie.jpg" alt="Alyxis"><p>Alyxis<br>Johnson</p></div>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/kyle.jpg" alt="Kyle"><p>Kyle<br>Scuhmacher</p></div>
+        <div class="three columns"><img src="{{ STATIC_URL }}images/charlie.jpg" alt="Jon"><p>Jon<br>Thompson</p></div>
+    </div>  
+    </main>
+    
+    <section class="software">
+        <div class="container">
+            <h2><span>Brought to You By</span></h2>
+            <div class="four columns"><img src="{{ STATIC_URL }}images/django.png" alt="django"></div>
+            <div class="four columns"><img src="{{ STATIC_URL }}images/heroku.png" alt="heroku"></div>
+            <div class="four columns"><img src="{{ STATIC_URL }}images/github.jpg" alt="github"></div>
+            <div class="four columns"><img src="{{ STATIC_URL }}images/slack.png" alt="slack"></div>
+        </div>
+    </section>
+    
+    <section class="sponsor">
+        <div class="container">
+            <h2><span>Our Sponsor</span></h2>
+            <img class="sponsor" src="{{ STATIC_URL }}images/dragonLAN.png" alt="DragonLAN">
+        </div>
+    </section>
+{% endblock %}

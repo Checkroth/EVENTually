@@ -5,45 +5,16 @@
 {% endblock %}
 
 {% block main %}
-    <main>
+    <main id="add-event">
         <div class="container">
-            <h2 class="welcome">Add An Event</h2>
-            <section class="addEvent">
+            <h2>Add An Event</h2>
+            <section class="form">
                 <form id="addEvent" method='post'>
                     {% csrf_token %}
-                    {{ form }}
+                    {{ form.as_p }}
 
                     <button form="addEvent" type="submit" name="login">Add Event</button>
-<!--                     <table>
-                        <tr>
-                            <td>Main Image (Optional):</td>
-                            <td><input type="file" name="eventImage" accept="image/*"></td>
-                        </tr>
-                        <tr>
-                            <td>Title:</td>
-                            <td><input type="text" name="eventTitle"></td>
-                        </tr>
-                         <tr>
-                            <td>Date:</td>
-                            <td><input type="date" name="eventDate"></td>
-                        </tr>
-                         <tr>
-                            <td>Start Time:</td>
-                            <td><input type="time" name="eventStartTime"></td>
-                        </tr>
-                         <tr>
-                            <td>End Time:</td>
-                            <td><input type="time" name="eventEndTime"></td>
-                        </tr>
-                         <tr>
-                            <td>Description:</td>
-                            <td><textarea name="eventDesc"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#"> <i class="fa fa-angle-left"></i> Back</a></td>
-                            <td><button form="addEvent" type="submit" name="login">Add Event</button></td>
-                        </tr>
-                    </table> -->
+
                 </form>
             </section>
         </div>

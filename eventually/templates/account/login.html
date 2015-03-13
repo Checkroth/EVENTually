@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 
-{% block mainNav %}
-<div class="hide"></div>
+{% block page_title %}
+	<title>[EVENTually] | Login</title>
 {% endblock %}
 
-{% block sidrNav %}
-<div class="hide"></div>
+{% block homeLink %}
+	<h1><a href="#" class="logo-link">[EVENTually]</a></h1>
+{% endblock %}
+
+{% block nav %}
+	<nav>
+    	<ul>
+        	<li><a href="location.href={{ login_url }}"><i class="fa fa-power-off"></i> Sign Up</a></li>
+        </ul>
+    </nav>
 {% endblock %}
 
 {% block main %}
-<main id="loginScreen">
+<main id="login">
   <div class="container">
       {% if socialaccount.providers  %}
           <p>{{ site_name }}Please sign in with one
@@ -30,7 +38,7 @@
 
       {% endif %}
     <form class="login" method="POST" action="{% url 'account_login' %}">
-    	  <h1>[EVENTually]</h1>
+    	  <h2>Login</h2>
           {% csrf_token %}
           {{ form.as_p }}
           {% if redirect_field_value %}
@@ -38,13 +46,12 @@
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
           
-          <button type="submit">Login</button> 
+          <button type="submit">Login</button>
+          <button type="button" onclick="location.href={{ signup_url }}">Sign Up</button> 
 
           <!-- <a href="{% url 'account_reset_password' %}">Forgot password?</a> -->
 
     </form>
-    
-    <p class="signup">Not a member? <a type="button" onclick="location.href={{ signup_url }}">Sign Up</a></p>
         
   </div>
 </main>

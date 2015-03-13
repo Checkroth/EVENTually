@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 @import url(http://fonts.googleapis.com/css?family=Jura:300);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
 
 /* Typography
@@ -33,6 +34,31 @@ body {
 	font-size: 13px; font-size: .8125rem;
     font-weight: 300;
 	line-height: 26px; line-height: 1.625rem;
+}
+
+.about p {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+main#main-event .description p {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+.helptext, input#id_profile_picture, main input, textarea {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+main#login input {
+    font-family: 'Jura', sans-serif;
+	font-size: 16px; font-size: 1rem;
+    font-weight: 300;
 }
 
 h1, #calendar h2 {

@@ -8,18 +8,10 @@
 {% endblock %}
 
 {% block main %}
-    <main>
+    <main id="main-event">
         <div class="container">
-            <div class="flex-wrapper">
-                <div class="three columns">
-                    <h4>Events I'm Hosting</h4>
-                    <ul>
-                        <li><a href="#">Upcoming</a></li>
-                        <li><a href="#">Past</a></li>
-                        <li><a href="#">+ Subevent</a></li>
-                    </ul>
-                </div>
-                <div class="thirteen columns">
+            <!--<div class="flex-wrapper">-->
+                <div class="twelve columns">
                     <h2>{{ event.title }}</h2>
                     <figure>
                         {% if event.event_photo %}
@@ -29,16 +21,46 @@
                         {% endif %}
                     </figure>
                     <section class="date">
-                        <p>Start: {{ event.start_time}}</p>
-                        <p>End: {{ event.end_time }}</p>
+                    	<div class="six columns">
+                        	<p>Start: {{ event.start_time}}</p>
+                        </div>
+                        <div class="six columns">
+                        	<p>End: {{ event.end_time }}</p>
+                        </div>
                     </section>
                     <section class="description">
-                        <h3>Event Description:</h3>
+                        <h3><span>Event Description</span></h3>
                         <p>{{ event.description }}</p>
                         
                     </section>
                 </div>
-            </div>
+                
+                <div class="four columns sidebar">
+                    
+                    <div class="subevent">
+                    	<h4>Subevents</h4>
+                    	<ul>
+                        {% for subevent in event.subevents %}
+                        <li>
+                            <a href="{% url 'show_subevent' event_id=event.pk subevent_id=subevent.pk %}">
+                            {{ subevent.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <div class="host">
+                    	<h4>Events I'm Hosting</h4>
+                    	<ul>
+                        	<li><a href="#">Upcoming</a></li>
+                        	<li><a href="#">Past</a></li>
+                        	<li><a href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
+                    	</ul>
+                    </div>
+                    
+                </div>
+            <!--</div>-->
         </div>
     </main>
 {% endblock %}
