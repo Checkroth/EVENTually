@@ -52,11 +52,16 @@ nav li {
 .mean-container .mean-bar {
     position: fixed;
     background: none;
-    top: 0;
+    top: 55px;
+}
+
+.mean-container a.meanmenu-reveal {
+    position: fixed;
+    top: 4px;
 }
 
 .mean-container .mean-nav {
-    margin-top: 52px;
+    margin-top: -3px;
 }
 
 .mean-container .mean-nav ul li {

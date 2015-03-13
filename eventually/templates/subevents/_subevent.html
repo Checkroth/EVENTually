@@ -12,7 +12,7 @@
             {% if event.event_photo %}
                <img src="{{ subevent.event_photo.url }}" alt="main event photo">
             {% else %}
-               <img src="images/test.jpg" alt="main event photo">
+               <img src="{{ STATIC_URL }}images/bg-img3.jpg" alt="main event photo">
             {% endif %}
         </figure>
 	 	<p class="date">{{ subevent.start_time }} to {{ subevent.end_time }}</p>
