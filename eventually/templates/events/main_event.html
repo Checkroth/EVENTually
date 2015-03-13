@@ -15,7 +15,7 @@
                         {% if event.event_photo %}
                         <img src="{{ event.event_photo.url }}" alt="main event photo">
                         {% else %}
-                        <img src="images/bg-img3.jpg" alt="main event photo">
+                        <img src="{{ STATIC_URL }}images/bg-img3.jpg" alt="main event photo">
                         {% endif %}
                     </figure>
                     <section class="date">
@@ -45,8 +45,8 @@
                             {{ subevent.title }}
                             </a>
                         </li>
-                        <li><a class="add-sub" href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
                         {% endfor %}
+                        <li><a class="add-sub" href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
                         </ul>
                     </div>
                     

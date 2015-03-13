@@ -599,6 +599,91 @@ main#sub-event p.back-to-main a:hover {
     opacity: .85;
 }
 
+/* MY EVENTS PAGE */
+
+main#my-events {
+    padding-top: 130px;
+}
+
+main#my-events h2 span {
+  display: inline-block;
+  position: relative;  
+}
+
+main#my-events h2 span:before,
+main#my-events h2 span:after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  top: 0;
+  width: 600px;
+}
+
+main#my-events h2 span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+main#my-events h2 span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+main#my-events h2 {
+    color: #432D46;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main#my-events h2 span:before, main#my-events span:after {
+    border-bottom: 2px solid #432D46;
+    opacity: .1;
+}
+
+main#my-events h3 {
+    text-transform: uppercase;
+    background: #432D46;
+    color: #FFF;
+    opacity: .9;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main#my-events .container {
+    overflow: hidden;
+}
+
+main#my-events .event {
+    float: left;
+    width: 220px;
+    margin: 0px 10px 25px 10px;
+}
+
+main#my-events .info {
+    background: #fff;
+    padding: 10px;
+}
+    
+main#my-events a {
+    color: #432D46;
+    content: "\0020";
+    display: block;
+    height: 0;
+}
+
+main#my-events .start, main#my-events .end {
+    text-transform: uppercase;
+}
+
+main#my-events .start {
+    margin-bottom: 0;
+}
+
+main#my-events .end {
+    margin: 0;
+}
+
 
 .form {
     margin: 0 auto;
@@ -752,6 +837,11 @@ footer p {
             width: 255px;
         }
     
+        main#my-events .event {
+            width: 235px;
+        }
+
+    
     }
 
 /*  #Mobile (Portrait) 
@@ -796,6 +886,15 @@ footer p {
         text-align: center;
     }
     
+    main#my-events .start, main#my-events .end {
+        font-size: 12px;
+    }
+    
+    main#my-events .event {
+        width: 100%;
+        margin: 0 0 25px 0;
+    }
+    
 
 }
 
@@ -811,5 +910,10 @@ footer p {
             margin-bottom: 20px;
             width: 140px;
         }
+    
+    main#my-events .event {
+        width: 190px;
+        margin: 0 10px 25px 10px;
+    }
     
 }
