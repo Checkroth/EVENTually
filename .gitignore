@@ -52,3 +52,10 @@ docs/_build/
 
 # PyBuilder
 target/
+local_settings.py
+
+eventually/db.sqlite3
+
+.DS_Store
+
+eventually/.DS_Store

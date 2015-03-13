@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>[EVENTually] | Thank You!</title>
+{% endblock %}
+
+{% block mainNav %}
+{% endblock %}
+
+{% block sidrNav %}
+{% endblock %}
+
+{% block main %}
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="welcome">
+          Sign-up successful! You can now log in with your new account.
+        </div>
+      </div>
+      <div class="row">
+      <h2><a href="{% url 'dashboard' %}">Log in here.</a></h2>
+      </div>
+    </div>
+  </main>
+
+  {% endblock %}

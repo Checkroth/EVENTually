@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<<<<<<< HEAD
 
 {% block page_title %}
 	<title>[EVENTually] | Sign Up</title>
@@ -18,15 +19,39 @@
             <label for="id_lname">Last Name:</label> 
             <input autofocus="autofocus" id="id_lname" maxlength="30" name="last_name" placeholder="Last Name" type="text">
           </p>
+=======
+>>>>>>> master
 
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <button type="submit">Sign Up</button>
-        </form> 
+{% block page_title %}
+    <title>[EVENTually] | Sign Up</title>
+{% endblock %}
 
+{% block mainNav %}
+{% endblock %}
+
+{% block sidrNav %}
+{% endblock %}
+
+{% block main %}
+  <main>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <section class="form">  
+          <form id="signup_form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ profileForm.as_p }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button type="submit">Sign Up</button>
+          </form>
+        </section>
     </div>
+<<<<<<< HEAD
 </main>
+=======
+  </main>
+>>>>>>> master
 
 {% endblock %}

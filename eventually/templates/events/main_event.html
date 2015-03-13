@@ -10,8 +10,29 @@
 {% block main %}
     <main id="main-event">
         <div class="container">
+<<<<<<< HEAD
             <!--<div class="flex-wrapper">-->
                 <div class="twelve columns">
+=======
+            <div class="flex-wrapper">
+                <div class="three columns">
+                    <h4>Events I'm Hosting</h4>
+                    <ul>
+                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#">Past</a></li>
+                        <li><a href="{% url 'create_subevent' event_id=event.pk %}">+ Subevent</a></li>
+                        <br /><br />
+                        {% for subevent in event.subevents %}
+                        <li>
+                            <a href="{% url 'show_subevent' event_id=event.pk subevent_id=subevent.pk %}">
+                            {{ subevent.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="thirteen columns">
+>>>>>>> master
                     <h2>{{ event.title }}</h2>
                     <figure>
                         {% if event.event_photo %}
