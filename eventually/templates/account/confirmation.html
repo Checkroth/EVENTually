@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    <title>[EVENTually] | Thank You!</title>
+    <title>[EVENTually] | Sign-Up Successful</title>
 {% endblock %}
 
 {% block nav %}
@@ -19,9 +19,11 @@
   <main id="account-confirmation">
     <div class="container">
       <div class="row">
-        <h2>Sign-up successful</h2>
+        <h2>Sign-Up Successful</h2>
         <section>
-          <a href="{% url 'dashboard' %}">Log in here</a>
+        	<p>Your sign-up was successful! Thank you for creating an account with us!</p>
+        	<!--<button type="submit" >Sign Up</button>-->
+          	<a href="{% url 'dashboard' %}">Log in here</a>
         </section>
       </div>
     </div>

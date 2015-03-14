@@ -317,17 +317,27 @@ main#account-confirmation section {
 }
 
 main#account-confirmation a {
-    text-transform: uppercase;
-    color: #432D46;
-    font-size: 2em;
     opacity: 0.9;
+    display: block;
+  	background: #432D46;
+  	text-transform: uppercase;
+  	padding: 10px 0;
+  	font-size: 20px;
+  	color: #fff;
+  	margin: 20px 20px 0 20px
+}
+
+main#account-confirmation a:hover {
+  	background: #2A142D;
+  	color: #fff;
+  	opacity: 1;
 }
 
 main#account-confirmation h2 {
     text-align: center;
     text-transform: uppercase;
     background-color: #432D46;
-    color: #FFF;
+    color: #fff;
     opacity: 0.9;
     margin: 0;
     padding: 20px 0;
