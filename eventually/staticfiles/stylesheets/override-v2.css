@@ -299,6 +299,41 @@ main#dashboard .container {
 }
     
 
+/* Sign Up Confirmation Styles */
+main#account-confirmation {
+    padding-top: 130px;
+}
+
+main#account-confirmation .container{
+    max-width: 420px;
+}
+
+main#account-confirmation section {
+    background-color: #FFF;
+    color: #432D46;
+    opacity: 0.9;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main#account-confirmation a {
+    text-transform: uppercase;
+    color: #432D46;
+    font-size: 2em;
+    opacity: 0.9;
+    text-decoration: underline;
+}
+
+main#account-confirmation h2 {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #432D46;
+    color: #FFF;
+    opacity: 0.9;
+    margin: 0;
+    padding: 20px 0;
+}
+
 /* ADD EVENT FORM STYLES */
 
 main#add-event {
