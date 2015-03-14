@@ -304,7 +304,7 @@ main#account-confirmation {
     padding-top: 130px;
 }
 
-main#account-confirmation .container{
+main#account-confirmation .container {
     max-width: 420px;
 }
 
@@ -321,7 +321,6 @@ main#account-confirmation a {
     color: #432D46;
     font-size: 2em;
     opacity: 0.9;
-    text-decoration: underline;
 }
 
 main#account-confirmation h2 {
