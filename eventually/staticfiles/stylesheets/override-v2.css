@@ -313,7 +313,7 @@ main#account-confirmation section {
     color: #432D46;
     opacity: 0.9;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 main#account-confirmation a {
@@ -324,13 +324,20 @@ main#account-confirmation a {
   	padding: 10px 0;
   	font-size: 20px;
   	color: #fff;
-  	margin: 20px 20px 0 20px
+  	margin: 20px 0;
 }
 
 main#account-confirmation a:hover {
   	background: #2A142D;
   	color: #fff;
   	opacity: 1;
+}
+
+main#account-confirmation p {
+	font-family: 'Lato', sans-serif;
+  	font-size: 13px;
+  	line-height: 27px;
+  	font-weight: 400;
 }
 
 main#account-confirmation h2 {
