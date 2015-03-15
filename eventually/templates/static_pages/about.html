@@ -21,32 +21,51 @@
 {% endblock %}
 
 {% block main %}
-	<main>
+	<section id="cover-img">
+        <div class="container">
+        <h1>[EVENTually]</h1>
+        <p>Tagline about our app goes here.</p>
+        <div class="action-call">
+            <button type="button" onclick="location.href='/accounts/login/'" class="log-in">Login</button> <button type="button" onclick="location.href='/accounts/signup/'" class="sign-up">Sign Up</button>
+        </div> 
+        </div>
+    </section>
+    
+      <section class="about">
+        <div class="container">
+            <h2><span>About Our App</span></h2>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc congue ex sit amet rutrum ullamcorper. Vestibulum sodales id odio ut ultrices. Duis ultrices sagittis dui vitae semper. In hac habitasse platea dictumst. Sed varius tristique arcu, eget sollicitudin velit mattis sit amet. Ut ipsum dui, pulvinar eget ullamcorper ut, auctor vitae tortor. Quisque vehicula a libero a euismod. Sed consectetur quis mauris id semper. Suspendisse vel justo finibus, facilisis ante ut, porta ex. Integer aliquet accumsan accumsan. Phasellus sit amet blandit nunc, sit amet dapibus dui. Duis non metus justo. Nullam porta pharetra ligula, ac eleifend lectus dictum ut. Etiam pretium erat non quam rutrum, a lacinia augue feugiat. Mauris vitae rhoncus mauris.</p>
+            <p>Phasellus aliquet suscipit mauris eu lobortis. Integer lacus purus, blandit nec vulputate et, varius ut nisl. Maecenas in magna id neque scelerisque consequat. Nulla lacus massa, finibus eget ligula sit amet, pretium lobortis leo. Aliquam magna ligula, fringilla eu auctor eu, scelerisque id nisi. Suspendisse sit amet dui neque. Donec vehicula sollicitudin leo vel cursus. Curabitur pulvinar odio sit amet eros pellentesque, nec finibus quam luctus. Duis in auctor urna, eu consequat mauris. Morbi feugiat sollicitudin congue. Nullam at tincidunt velit. Nullam a placerat nunc. Nam ac felis sed lacus sollicitudin blandit sed non dolor. Morbi feugiat, ex id feugiat elementum, metus enim dignissim magna, vel consequat nisi metus ut tortor. Nulla eget augue ac turpis placerat finibus. Fusce vitae mollis massa.</p>
+        </div>
+    </section>
+	
+	<!-- MAIN CONTENT -->
+    <main>
 	<div class="container team">
         <h2><span>Meet the Team</span></h2>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/anthony.jpg" alt="Anthony"><p>Anthony<br>Broomes-Barbee</p></div>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/andrew.jpg" alt="Andrew"><p>Andrew<br>Hagner</p></div>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/charlie.jpg" alt="Charlie"><p>Charlie<br>Heckroth</p></div>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/alyxis.jpg" alt="Alyxis"><p>Alyxis<br>Johnson</p></div>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/kyle.jpg" alt="Kyle"><p>Kyle<br>Scuhmacher</p></div>
-        <div class="three columns"><img src="{{ STATIC_URL }}images/jon.jpg" alt="Jon"><p>Jon<br>Thompson</p></div>
+        <div class="three columns"><img src="images/anthony.jpg" alt="Charlie"><p>Anthony<br>Broomes-Barbee</p></div>
+        <div class="three columns"><img src="images/charlie.jpg" alt="Charlie"><p>Andrew<br>Hagner</p></div>
+        <div class="three columns"><img src="images/charlie.jpg" alt="Charlie"><p>Charlie<br>Heckroth</p></div>
+        <div class="three columns"><img src="images/charlie.jpg" alt="Charlie"><p>Alyxis<br>Johnson</p></div>
+        <div class="three columns"><img src="images/kyle.jpg" alt="Charlie"><p>Kyle<br>Scuhmacher</p></div>
+        <div class="three columns"><img src="images/charlie.jpg" alt="Charlie"><p>Jon<br>Thompson</p></div>
     </div>  
     </main>
     
     <section class="software">
         <div class="container">
             <h2><span>Brought to You By</span></h2>
-            <div class="four columns"><img src="{{ STATIC_URL }}images/django.png" alt="django"></div>
-            <div class="four columns"><img src="{{ STATIC_URL }}images/heroku.png" alt="heroku"></div>
-            <div class="four columns"><img src="{{ STATIC_URL }}images/github.jpg" alt="github"></div>
-            <div class="four columns"><img src="{{ STATIC_URL }}images/slack.png" alt="slack"></div>
+            <div class="four columns"><img src="images/django.png" alt="django"></div>
+            <div class="four columns"><img src="images/heroku.png" alt="heroku"></div>
+            <div class="four columns"><img src="images/github.jpg" alt="github"></div>
+            <div class="four columns"><img src="images/slack.png" alt="slack"></div>
         </div>
     </section>
     
     <section class="sponsor">
         <div class="container">
             <h2><span>Our Sponsor</span></h2>
-            <img class="sponsor" src="{{ STATIC_URL }}images/dragonLAN.png" alt="DragonLAN">
+            <img class="sponsor" src="images/dragonLAN.png" alt="DragonLAN">
         </div>
     </section>
 {% endblock %}
