@@ -32,4 +32,4 @@ def confirmation(request):
     return render(request, 'account/confirmation.html')
 
 def login(request):
-    return redner(request, 'account/login.html')
+    return render(request, 'account/login.html')
