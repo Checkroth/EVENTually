@@ -8,9 +8,12 @@ def dashboard(request):
         user = request.user
         my_events = events.models.Event.objects.filter(host=user)
     except:
-        return redirect('/accounts/login');
+        return redirect('/accounts/login')
 
     return render(request, 'static_pages/dashboard.html', {
         'user': user,
         'events': my_events,
         })
+
+def about(request):
+	return redirect('/accounts/login')

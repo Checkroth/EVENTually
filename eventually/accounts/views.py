@@ -30,3 +30,6 @@ def create_account(request):
 
 def confirmation(request):
     return render(request, 'account/confirmation.html')
+
+def login(request):
+    return render(request, 'account/login.html')
