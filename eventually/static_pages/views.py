@@ -16,4 +16,4 @@ def dashboard(request):
         })
 
 def about(request):
-	return redirect('/accounts/login')
+    return render(request, 'static_pages/about.html')
