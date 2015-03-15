@@ -845,6 +845,35 @@ hr {
 
 #scroller li {
     height: auto;
+    margin: 0 10px;
+}
+
+#scroller li img {
+	height: 130px;
+  	width: 290px;
+}
+
+#scroller p.title {
+	text-align: center;
+  	background: #432D46;
+  	color: white;
+  	text-transform: uppercase;
+  	margin: 0;
+  	padding: 10px;
+  	font-size: 18px;
+}
+
+#scroller p.start, #scroller p.end {
+	background: #fff;
+  	margin: 0;
+  	padding: 5px;
+  	text-align: center;
+  	color: #432D46;
+  	text-transform: uppercase;
+}
+
+#scroller a:hover {
+	opacity: .85;
 }
 
 /* STICKY FOOTER */
