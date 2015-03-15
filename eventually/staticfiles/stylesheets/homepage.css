@@ -393,7 +393,7 @@ footer p {
         }
         
         #cover-img h1 {
-            font-size: 55px;
+            font-size: 50px;
             width: 100%;
             padding: 130px 0 50px 0;
         }
@@ -421,5 +421,11 @@ footer p {
             margin-bottom: 20px;
             width: 140px;
         }
+        
+    #cover-img h1 {
+    	font-size: 55px;
+        width: 100%;
+        padding: 130px 0 50px 0;
+	}
     
 }
