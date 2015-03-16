@@ -13,7 +13,7 @@ $(document).ready(function() {
         timezone: 'UTC',
         events: function(start, end, timezone, callback) {
             $.ajax({
-                url: 'my_events_json',
+                url: '/my_events_json',
                 dataType: 'json',
                 success: function(events) {
                     callback(events.map(function (e) {
