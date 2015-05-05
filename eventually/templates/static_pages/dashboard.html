@@ -17,7 +17,7 @@
         <section class="events">
         	{% if events %}  
             <ul id="scroller">
-                {% for event in events %}
+                {% for event in suggested_events %}
                 <li>
                     <a href="{{ event.get_absolute_url }}">
                         {% if event.event_photo %}
