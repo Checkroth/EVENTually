@@ -5,6 +5,16 @@ from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 
 class Event(django.db.models.Model):
+    HOST = 'HOST'
+    GUESTS = 'GUESTS'
+    EVERYONE = 'EVERYONE'
+
+    INVITER_OPTIONS = (
+        (HOST, 'Just me'),
+        (GUESTS, 'Guests & me'),
+        (EVERYONE, 'Everyone')
+    )
+
     host = django.db.models.ForeignKey(django.contrib.auth.models.User, related_name='event_host')
     title = django.db.models.CharField(max_length=255)
     description = django.db.models.TextField(null=True, blank=True)
@@ -13,6 +23,7 @@ class Event(django.db.models.Model):
     start_time = django.db.models.DateTimeField()
     end_time = django.db.models.DateTimeField()
     created_at = django.db.models.DateTimeField(auto_now_add=True)
+    inviter = django.db.models.CharField(max_length=255, choices=INVITER_OPTIONS, default=HOST, verbose_name='Who can invite guests')
 
     def __unicode__(self):
         return self.title
@@ -29,6 +40,19 @@ class Event(django.db.models.Model):
     def get_absolute_url(self):
         #Allows an event to give its own unique url to the views/templates
         return reverse('show_event', kwargs={'event_id': self.pk})
+
+    def can_invite(self, user):
+        if self.inviter == self.HOST:
+            return user == self.host
+
+        if self.inviter == self.GUESTS:
+            return user == self.host or self.is_invited(user) 
+
+        return True
+
+    # TODO: check if user is guest
+    def is_invited(self, user):
+        return False
 
 
 # This section needs some work, its not saving instance guests addition

@@ -46,8 +46,14 @@ def create_event(request):
         })
 
 def show_event(request, event_id):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
     event = events.models.Event.objects.get(id=event_id)
     return render(request, 'events/main_event.html', {
         'event': event,
+        'can_invite': event.can_invite(user)
         })
     # Need to do the url based jangles here

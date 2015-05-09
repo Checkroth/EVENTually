@@ -36,7 +36,17 @@
                 </div>
                 
                 <div class="four columns sidebar">
-                    
+                    <div class="subevent">
+                        <h4>Invite</h4>
+                        <p>
+                            {% if can_invite %}
+                                You can invite someone!
+                            {% else %}
+                                This event is <strong>private</strong>. Only Amy can invite guests.
+                            {% endif %}
+                        </p>
+                    </div>
+
                     <div class="subevent">
                     	<h4>Subevents</h4>
                     	<ul>
