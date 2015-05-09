@@ -68,4 +68,27 @@ def invite(request, event_id):
         invite.event = event
         invite.save()
 
+def event_inbox(request):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
+    usersInvites = events.models.Invite.objects.all().filter(user=user)
+
+    return render(request, 'events/event_inbox.html', {
+        'invites' : usersInvites
+        })
+
+def event_inbox_json(request):
+    try:
+        user = request.user
+        invites = events.models.Invite.objects.all().filter(user=user)
+    except:
+        user = {'username': 'no user',}
+        invites = []
+
+    data = serializers.serialize('json', invites)
+    return HttpResponse(data, 'application/json')
+
     return redirect('{}'.format(event.get_absolute_url()))

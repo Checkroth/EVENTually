@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main id="event-inbox">
+	<div class="container">
+		<br/><br/>
+		<h2 class="welcome"><span>Event Invitations</span></h2>
+
+		{% if invites %}
+
+			{% for invite in invites %}
+			<div style="margin:10px;padding:10px; background-color:#FFFFFF;">
+				<h4>{{ invite.event }}</h4>
+				<p>
+					Attending: {{ invite.attending }}
+				</p>
+			</div>
+
+			{% endfor %}
+
+		{% else %}
+		<h1>No invites. No one likes you. :'(</h1>
+		{% endif %}			
+
+	</div>
+</main>
+{% endblock %}
