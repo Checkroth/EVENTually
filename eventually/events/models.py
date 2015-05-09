@@ -18,7 +18,6 @@ class Event(django.db.models.Model):
     host = django.db.models.ForeignKey(django.contrib.auth.models.User, related_name='event_host')
     title = django.db.models.CharField(max_length=255)
     description = django.db.models.TextField(null=True, blank=True)
-    guests = django.db.models.ManyToManyField(django.contrib.auth.models.User, related_name='event_guests', null=True, blank=True)
     event_photo = django.db.models.ImageField(upload_to='events', max_length=255, null=True, blank=True)
     start_time = django.db.models.DateTimeField()
     end_time = django.db.models.DateTimeField()
@@ -53,6 +52,25 @@ class Event(django.db.models.Model):
     # TODO: check if user is guest
     def is_invited(self, user):
         return False
+
+    def get_guests(self):
+        return Invite.objects.all().filter(event=self)
+
+
+class Invite(django.db.models.Model):
+    UNKNOWN = '?'
+    YES = 'Y'
+    NO = 'N'
+
+    ATTENDING_OPTIONS = (
+        (UNKNOWN, ''),
+        (YES, 'Yes'),
+        (NO, 'No')
+    )
+
+    event = django.db.models.ForeignKey(Event, related_name='invite_event')
+    user = django.db.models.ForeignKey(django.contrib.auth.models.User, related_name='invite_user')
+    attending = django.db.models.CharField(max_length=1, choices=ATTENDING_OPTIONS, default=UNKNOWN, verbose_name='Will you be attending')
 
 
 # This section needs some work, its not saving instance guests addition

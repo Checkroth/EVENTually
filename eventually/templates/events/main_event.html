@@ -40,11 +40,33 @@
                         <h4>Invite</h4>
                         <p>
                             {% if can_invite %}
-                                You can invite someone!
+                            <form id="invite" method='post' action="invite/">
+                                {% csrf_token %}
+                                {{ invite_form.as_p }}
+
+                                <button form="invite" type="submit" name="invite">Invite</button>
+
+                            </form>
                             {% else %}
                                 This event is <strong>private</strong>. Only Amy can invite guests.
                             {% endif %}
                         </p>
+                    </div>
+
+                    <div class="subevent">
+                        <h4>Guests</h4>
+                        <table>
+                            <tr>
+                                <td>Guest</td>
+                                <td>Attending</td>
+                            </tr>
+                            {% for guest in event.get_guests %}
+                                <tr>
+                                    <td>{{ guest.user }}</td>
+                                    <td>{{ guest.attending }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
                     </div>
 
                     <div class="subevent">

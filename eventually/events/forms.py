@@ -24,17 +24,12 @@ class EventForm(forms.ModelForm):
         return picture
 
 
+class InviteForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(InviteForm, self).__init__(*args, **kwargs)
 
-        # Widget examples
+    class Meta:
+        model = events.models.Invite
+        fields = ['user']
 
-        #     labels = {
-        #     'name': _('Writer'),
-        # }
-        # help_texts = {
-        #     'name': _('Some useful help text.'),
-        # }
-        # error_messages = {
-        #     'name': {
-        #         'max_length': _("This writer's name is too long."),
-        #     },
-        # }
+        

@@ -52,8 +52,20 @@ def show_event(request, event_id):
         user = {'username': 'no user',}
 
     event = events.models.Event.objects.get(id=event_id)
+    invite_form = events.forms.InviteForm()
     return render(request, 'events/main_event.html', {
         'event': event,
-        'can_invite': event.can_invite(user)
+        'can_invite': event.can_invite(user),
+        'invite_form': invite_form
         })
-    # Need to do the url based jangles here
+
+def invite(request, event_id):
+    event = events.models.Event.objects.get(id=event_id)
+
+    if request.POST:
+        form = events.forms.InviteForm(request.POST)
+        invite = form.save(False)
+        invite.event = event
+        invite.save()
+
+    return redirect('{}'.format(event.get_absolute_url()))
