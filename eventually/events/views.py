@@ -59,6 +59,26 @@ def show_event(request, event_id):
         'invite_form': invite_form
         })
 
+def invite_response(request, invite_id, response):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
+    invite = events.models.Invite.objects.get(id=invite_id)
+
+    if response == "1":
+        invite.attending = "Y"
+
+    if response == "0":
+        invite.attending = "N"
+
+    if response == "2":
+        invite.attending = "?"
+
+    invite.save()
+    return event_inbox(request)
+
 def invite(request, event_id):
     event = events.models.Event.objects.get(id=event_id)
 

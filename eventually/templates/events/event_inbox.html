@@ -11,9 +11,33 @@
 			{% for invite in invites %}
 			<div style="margin:10px;padding:10px; background-color:#FFFFFF;">
 				<h4>{{ invite.event }}</h4>
-				<p>
-					Attending: {{ invite.attending }}
-				</p>
+
+				Attending:
+
+				<a 
+					{% if invite.attending == "Y" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="1" %}">
+					Yes
+				</a>
+
+				<a 
+					{% if invite.attending == "N" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="0" %}">
+					No
+				</a>
+
+				<a 
+					{% if invite.attending == "?" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="2" %}">
+					Maybe
+				</a>
+
 			</div>
 
 			{% endfor %}
