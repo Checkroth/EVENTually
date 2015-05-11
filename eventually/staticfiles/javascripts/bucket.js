@@ -18,7 +18,7 @@ $(document).ready(function() {
                 success: function(events) {
                     callback(events.map(function (e) {
                         return {
-                            url: "event/" + e.pk,
+                            url: "/event/" + e.pk,
                             title: e.fields.title,
                             start: $.fullCalendar.moment(e.fields.start_time),
                             end: $.fullCalendar.moment(e.fields.end_time)
