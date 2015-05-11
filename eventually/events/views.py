@@ -87,6 +87,7 @@ def invite(request, event_id):
         invite = form.save(False)
         invite.event = event
         invite.save()
+    return show_event(request, event_id)
 
 def event_inbox(request):
     try:

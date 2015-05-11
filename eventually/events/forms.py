@@ -7,8 +7,8 @@ class EventForm(forms.ModelForm):
         self.user = kwargs.pop('user', None)
         super(EventForm, self).__init__(*args, **kwargs)
     
-    start_time = forms.DateField(widget=forms.DateInput(attrs={'class':'start_timepicker'}))
-    end_time = forms.DateField(widget=forms.DateInput(attrs={'class':'end_timepicker'}))
+    start_time = forms.DateTimeField(widget=forms.DateInput(attrs={'class':'start_timepicker'}))
+    end_time = forms.DateTimeField(widget=forms.DateInput(attrs={'class':'end_timepicker'}))
 
     class Meta:
         model = events.models.Event
