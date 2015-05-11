@@ -51,7 +51,11 @@ class Event(django.db.models.Model):
 
     # TODO: check if user is guest
     def is_invited(self, user):
-        return False
+        user_presence = Invite.objects.all().filter(event=self)
+        if user_presence.__contains__(user):
+            return True
+        else:
+            return False
 
     def get_guests(self):
         return Invite.objects.all().filter(event=self)

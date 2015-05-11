@@ -68,13 +68,13 @@ def invite_response(request, invite_id, response):
     invite = events.models.Invite.objects.get(id=invite_id)
 
     if response == "1":
-        invite.attending = "Y"
+        invite.attending = "Attending"
 
     if response == "0":
-        invite.attending = "N"
+        invite.attending = "Not Attending"
 
     if response == "2":
-        invite.attending = "?"
+        invite.attending = "Invited"
 
     invite.save()
     return event_inbox(request)
