@@ -149,7 +149,7 @@
 		formattedTime: '',
 		formattedDateTime: '',
 		timezoneList: null,
-		units: ['hour', 'minute', 'second', 'millisec', 'microsec'],
+		units: ['hour', 'minute'],
 		support: {},
 		control: null,
 
