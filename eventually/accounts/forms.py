@@ -18,10 +18,8 @@ class UserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
 
+    birthday = forms.DateField(widget=forms.DateInput(attrs={'class':'timepicker'}))
+
     class Meta:
         model = accounts.models.UserProfile
         fields = ['birthday', 'profile_picture']
-        widgets = {
-            'birthday': forms.DateInput()
-        }
-        # birthday = forms.DateField(widget=forms.DateInput(attrs={'class':'timepicker'}))
