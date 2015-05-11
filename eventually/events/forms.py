@@ -10,6 +10,10 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = events.models.Event
         fields = ['title', 'description', 'event_photo', 'start_time', 'end_time',]
+        widgets = {
+            'start_time': forms.SplitDateTimeWidget(),
+            'end_time': forms.SplitDateTimeWidget()
+        }
 
     def clean_picture(self):
         picture = self.cleaned_data.get('event_photo')
