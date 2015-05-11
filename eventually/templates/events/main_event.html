@@ -53,6 +53,7 @@
                         </p>
                     </div>
 
+                    {% if event.get_guests %}
                     <div class="subevent">
                         <h4>Guests</h4>
                         <table>
@@ -68,6 +69,7 @@
                             {% endfor %}
                         </table>
                     </div>
+                    {% endif %}
 
                     <div class="subevent">
                     	<h4>Subevents</h4>
