@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main id="event-inbox">
+	<div class="container">
+		<br/><br/>
+		<h2 class="welcome"><span>Event Invitations</span></h2>
+
+		{% if invites %}
+
+			{% for invite in invites %}
+			<div style="margin:10px;padding:10px; background-color:#FFFFFF;">
+				<h4>{{ invite.event }}</h4>
+
+				Attending:
+
+				<a 
+					{% if invite.attending == "Y" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="1" %}">
+					Yes
+				</a>
+
+				<a 
+					{% if invite.attending == "N" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="0" %}">
+					No
+				</a>
+
+				<a 
+					{% if invite.attending == "?" %} 
+						style="color:green;font-weight:bold;"
+					{% endif %}
+					href="{% url 'invite_response' invite_id=invite.pk response="2" %}">
+					Maybe
+				</a>
+
+			</div>
+
+			{% endfor %}
+
+		{% else %}
+		<h1>No invites. No one likes you. :'(</h1>
+		{% endif %}			
+
+	</div>
+</main>
+{% endblock %}

@@ -7,7 +7,7 @@ def dashboard(request):
     try:
         user = request.user
         my_events = events.models.Event.objects.filter(host=user)
-        suggested_events = events.models.Event.objects.filter(host!=user)
+        suggested_events = events.models.Event.objects.exclude(host=user)
     except:
         return redirect('/accounts/login')
 

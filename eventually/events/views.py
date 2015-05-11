@@ -46,8 +46,69 @@ def create_event(request):
         })
 
 def show_event(request, event_id):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
     event = events.models.Event.objects.get(id=event_id)
+    invite_form = events.forms.InviteForm()
     return render(request, 'events/main_event.html', {
         'event': event,
+        'can_invite': event.can_invite(user),
+        'invite_form': invite_form
         })
-    # Need to do the url based jangles here
+
+def invite_response(request, invite_id, response):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
+    invite = events.models.Invite.objects.get(id=invite_id)
+
+    if response == "1":
+        invite.attending = "Y"
+
+    if response == "0":
+        invite.attending = "N"
+
+    if response == "2":
+        invite.attending = "?"
+
+    invite.save()
+    return event_inbox(request)
+
+def invite(request, event_id):
+    event = events.models.Event.objects.get(id=event_id)
+
+    if request.POST:
+        form = events.forms.InviteForm(request.POST)
+        invite = form.save(False)
+        invite.event = event
+        invite.save()
+
+def event_inbox(request):
+    try:
+        user = request.user
+    except:
+        user = {'username': 'no user',}
+
+    usersInvites = events.models.Invite.objects.all().filter(user=user)
+
+    return render(request, 'events/event_inbox.html', {
+        'invites' : usersInvites
+        })
+
+def event_inbox_json(request):
+    try:
+        user = request.user
+        invites = events.models.Invite.objects.all().filter(user=user)
+    except:
+        user = {'username': 'no user',}
+        invites = []
+
+    data = serializers.serialize('json', invites)
+    return HttpResponse(data, 'application/json')
+
+    return redirect('{}'.format(event.get_absolute_url()))
