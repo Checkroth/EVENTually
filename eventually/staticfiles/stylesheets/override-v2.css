@@ -603,16 +603,25 @@ select#id_inviter {
 	width: 100%;
 }
 
-.invite form, .invite p {
+.invite form {
 	padding: 20px;
+}
+
+.invite p {
+	margin: 0;
 }
 
 form#invite label {
 	text-transform: uppercase;
 }
 
+.guests, .invite {
+	margin-bottom: 25px;
+}
+
 .guests div {
 	padding: 20px;
+	background: #fff;
 }
 
 .guests table {
