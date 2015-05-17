@@ -870,6 +870,27 @@ main#event-inbox .container {
   overflow: hidden;
 }
 
+main#event-inbox h3 {
+  text-transform: uppercase;
+  background: #432D46;
+  color: #FFF;
+  opacity: .9;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+main#event-inbox .info {
+  background: #fff;
+  padding: 10px;
+}
+
+main#event-inbox .event {
+  float: left;
+  width: 220px;
+  margin: 0px 10px 25px 10px;
+}
+
 /* CALENDAR STYLES */
 
 #calendar {
