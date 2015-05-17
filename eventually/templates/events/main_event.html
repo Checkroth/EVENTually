@@ -36,9 +36,8 @@
                 </div>
                 
                 <div class="four columns sidebar">
-                    <div class="subevent">
+                    <div class="invite">
                         <h4>Invite</h4>
-                        <p>
                             {% if can_invite %}
                             <form id="invite" method='post' action="invite/">
                                 {% csrf_token %}
@@ -48,19 +47,19 @@
 
                             </form>
                             {% else %}
-                                This event is <strong>private</strong>. Only Amy can invite guests.
+                                <p>This event is <strong>private</strong>. Only Amy can invite guests.</p>
                             {% endif %}
-                        </p>
                     </div>
 
                     {% if event.get_guests %}
-                    <div class="subevent">
+                    <div class="guests">
                         <h4>Guests</h4>
+                        <div>
                         <table>
-                            <tr>
+                            <th>
                                 <td>Guest</td>
                                 <td>Attending</td>
-                            </tr>
+                            </th>
                             {% for guest in event.get_guests %}
                                 <tr>
                                     <td>{{ guest.user }}</td>
@@ -68,6 +67,7 @@
                                 </tr>
                             {% endfor %}
                         </table>
+                        </div>
                     </div>
                     {% endif %}
 
@@ -85,6 +85,7 @@
                         </ul>
                     </div>
                     
+                    <!--
                     <div class="host">
                     	<h4>Events I'm Hosting</h4>
                     	<ul>
@@ -92,6 +93,7 @@
                         	<li><a href="#">Past</a></li>
                     	</ul>
                     </div>
+                    -->
                     
                 </div>
             <!--</div>-->

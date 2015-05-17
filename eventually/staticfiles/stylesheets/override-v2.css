@@ -388,7 +388,7 @@ main#add-event section.form input, main#add-event section.form textarea {
     box-sizing: border-box;
     padding: 15px 5px;
     border: none;
-    background: #f5f5ed;
+    background: #f5f5ea;
 }
 
 main#add-event #id_event_photo {
@@ -582,6 +582,41 @@ main#main-event .sidebar li a:hover {
     background: #C8C2A2;
     opacity: 1;
     color: #fff;
+}
+
+#invite button {
+	background: #f5f5ed;
+  	color: #432D46;
+  	font-weight: bold;
+  	border: none;
+ 	 width: 100%;
+  	text-transform: uppercase;
+  	padding: 10px;
+  	font-size: 15px;
+}
+
+#invite button:hover {
+	background: #DCDCD4;
+}
+
+select#id_inviter {
+	width: 100%;
+}
+
+.invite form, .invite p {
+	padding: 20px;
+}
+
+form#invite label {
+	text-transform: uppercase;
+}
+
+.guests div {
+	padding: 20px;
+}
+
+.guests table {
+	width: 100%;
 }
 
 /* SUBEVENT PAGE STYLES */
