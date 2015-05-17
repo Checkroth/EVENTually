@@ -866,6 +866,10 @@ main#event-inbox h2 span:before, main#event-inbox span:after {
     opacity: .1;
 }
 
+main#event-inbox .container {
+  overflow: hidden;
+}
+
 /* CALENDAR STYLES */
 
 #calendar {
