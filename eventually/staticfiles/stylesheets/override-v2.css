@@ -518,7 +518,6 @@ section.description {
     background: #fff;
     padding: 20px;
     color: #2A142D;
-    opacity: .85;
     font-size: 15px;
 }
 
@@ -548,13 +547,14 @@ main#main-event .sidebar .subevent {
 }
 
 main#main-event .sidebar .subevent li a.add-sub {
-  background: #f5f5ed;
-  color: #432D46;
-  font-weight: bold;
+  	background: #f5f5ed;
+  	color: #432D46;
+  	font-weight: bold;
+    margin-bottom: 0;
 }
 
 main#main-event .sidebar .subevent li a.add-sub:hover {
-  background: #DCDCD4;
+ 	background: #DCDCD4;
 }
 
 main#main-event .sidebar ul {
@@ -605,10 +605,11 @@ select#id_inviter {
 
 .invite form {
 	padding: 20px;
+	background: #fff;
 }
 
 .invite p {
-	margin: 0;
+	margin: 0 0 15px 0;
 }
 
 form#invite label {
@@ -626,6 +627,16 @@ form#invite label {
 
 .guests table {
 	width: 100%;
+	font-family: 'Lato', sans-serif;
+  	font-size: 12px;
+}
+
+.guests table thead {
+  	text-transform: uppercase;
+  	font-weight: bold;
+  	font-family: Jura, sans-serif;
+  	font-size: 14px;
+  	border-bottom: 1px solid;
 }
 
 /* SUBEVENT PAGE STYLES */
@@ -784,7 +795,6 @@ main#my-events .end {
     margin: 0;
 }
 
-
 .form {
     margin: 0 auto;
     opacity: .85;
@@ -815,6 +825,46 @@ input[type="file"], textarea {
     padding: 3px 5px;
 }
 
+/* INVITATIONS PAGE STYLES */
+
+main#event-inbox {
+  padding-top: 130px;
+}
+
+main#event-inbox h2 span {
+  display: inline-block;
+  position: relative;
+}
+
+main#event-inbox h2 span:before,
+main#event-inbox h2 span:after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  top: 0;
+  width: 600px;
+}
+
+main#event-inbox h2 span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+main#event-inbox h2 span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+main#event-inbox h2 {
+    color: #432D46;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main#event-inbox h2 span:before, main#event-inbox span:after {
+    border-bottom: 2px solid #432D46;
+    opacity: .1;
+}
 
 /* CALENDAR STYLES */
 
